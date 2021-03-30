@@ -1,0 +1,52 @@
+<html>
+<style>
+
+#content {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#top_title {
+    margin-bottom: 0;
+    display: none;
+}
+
+.mw-content-ltr {
+    direction: none;
+}
+
+.firstHeading {
+    padding-top: 0;
+    margin-bottom: 0;
+}
+
+.logo_2020 {
+    display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    border-bottom: 0px none;
+}
+
+
+#globalWrapper {
+    padding-bottom: 0;
+}
+
+p {
+    margin: 0;
+}
+
+#HQ_page p {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1em;
+}
+</style>
+
+<script>
+window.onload = function(){
+    document.querySelector("#HQ_page").id = '';
+}
+</script>
+</html>

@@ -1,0 +1,122 @@
+{{Template:CCU_Taiwan/bootstrap_min_css}}
+{{Template:CCU_Taiwan/modify_css}}
+{{Template:CCU_Taiwan/header}}
+{{Template:CCU_Taiwan/description_css}}
+
+<html>
+<head>
+
+<script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:CCU_Taiwan/JS/bootstrap&action=raw&ctype=text/javascript"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<!--Description-->
+<body>
+<div id="fullpage" class="infos bg_img_1">
+    <h1 class="wordcenter shadow">Description</h1>
+</div>
+<nav class="section-nav">
+    <ul>
+        <li><a href="#ins">Inspiration</a></li>
+        <li><a href="#dec">Detection of Dengue Virus</a></li>
+        <li><a href="#dendetx">Dengue Virus Detection Kit (DENDETX)</a></li>
+        <br>
+        <li id="abr"><b>Abbreviations</b></li>
+        <li id="abr">CLEC5A: C-type lectin domain, family 5, member A</li>
+        <li id="abr">E protein: dengue virus envelope protein</li>
+        <li id="abr">PTRS: peptide of tandem-repeated sequence</li>
+    </ul>
+    <svg class="section-nav-marker" width="200" height="200"></svg>
+</nav>
+
+<div class="contents s12 m6 l4" id="text">
+    <article>
+        <section id="ins">
+            <h2>Inspiration</h2>
+            <p>Dengue fever is a disease that affects tropical and subtropical regions, where the population density is relatively high. Half of the world population is under the threat of dengue fever, with 390 million infections every year. This number greatly exceeds the number of cases of COVID-19, which was about 25 million by September 1<sup>st</sup>, 2020, causing dengue fever to be listed by WHO as a top 10 health threat.</p>
+            <br>
+            <p>Dengue fever can progress into more serious conditions known as dengue hemorrhagic fever (DHF) or dengue shock syndrome (DSS). An estimated 500,000 patients will develop into DHF or DSS, which results in about 25,000 deaths every year.</p>
+            <br>
+            <p>If proper medical treatment is not taken or if a person has previously been infected, dengue fever patients will have higher risk of developing dengue hemorrhagic fever (DHF). This usually happens between the 3rd to 7th day of dengue fever cycle. Patients in this phase could have bleeding in organs and pleural effusion. Those symptoms contribute to increasing vascular permeability, which will cause the leakage of plasma and a mortality rate of 20%.</p>
+            <br>
+            <p>If the condition becomes worse, patients would have the dengue shock syndrome (DSS). Symptoms of DSS include a sudden drop in blood pressure, severe abdominal pain, vomiting and restlessness, increasing the mortality rate to 40%. Once a patient has DSS, it can be fatal within 12 to 24 hours.</p>
+            <br>
+            <p>Taiwan, which is in the subtropical region, is under the threat of dengue virus. There were outbreaks of dengue fever in southern Taiwan, Kaohsiung and Tainan, from 2014 to 2015. There were over 44,000 confirmed cases in an epidemic that spread from Tainan to other cities, causing 220 deaths. Although the threat of dengue fever has historically been greater in the southern Taiwan, there was a local transmission of dengue fever in a northern city (Taoyuan), showing that the potentially affected population is increasing in 2020, according to TCDC (Taiwan Centers of Disease Control) statistics.</p>
+            <br>
+            <p>However, there are no effective treatments or vaccines for dengue infections. The use of the vaccine is still highly restricted for most countries in Asia. Thus, health care systems are still facing a huge challenge from dengue fever.</p>
+        </section>
+        <br>
+        <section id="dec">
+            <h2>Detection of Dengue Virus</h2>
+            <p>To overcome the huge challenge of dengue fever, we want to develop a novel detection device. A transmembrane protein, C-type lectin domain, family 5, member A (CLEC5A), usually found on macrophages and dendritic cells, is a critical receptor for the dengue virus infection. When CLEC5A interacts with the envelope protein (E protein) of dengue virus, it can lead to the downstream transduction and cytokine storm, causing the high mortality of DSS. This inspired us to consider whether the binding of CLEC5A and E protein could be utilized to detect dengue virus.</p>
+            <br>
+            <p>However, CLEC5A is a large transmembrane protein, making it both difficult to induce overexpression and also difficult to purify. Therefore, we chose several parts of CLEC5A which we speculate will interact with the E protein to design short peptides of about 1.3 kDa, which serve as a detection reagent instead of full-length CLEC5A.</p>
+            <br>
+            <p>We used Rosetta to simulate the interaction of the peptides and E protein. We also produced an E protein from the bl046 strain of dengue virus using E.coli, so we can test the interaction.</p>
+        </section>
+        <br>
+        <section id="dendetx">
+            <h2>Dengue Virus Detection Kit (DENDETX)</h2>
+            <p>Our detection kit is designed to detect whole virus particles in blood samples, based on the binding between E proteins from dengue virus and the peptide of tandem-repeated sequence (PTRSs). The proposed mechanism of the detection kit is as follows (Figure 1):</p>
+            <br>
+            <ol>
+                <li>The sample is dropped on the sample pad.</li>
+                <li>Gold nanoparticle with PTRS-1 binds to dengue virus particles in the sample in the conjugate pad.</li>
+                <li>The virus particles are restrained on the test line via an interaction between PTRS-2 and virus particles, showing a red band of gold nanoparticles indicating a positive result.</li>
+                <li>Gold nanoparticles with PTRS-1 bind to the E proteins mounted on the control line also producing a red band to confirm the test works properly.</li>
+            </ol>
+            <br>
+            <div id="imginfo">
+                <img width="80%" src="https://2020.igem.org/wiki/images/7/78/T--CCU_Taiwan--Description_1.gif">
+                <p>Figure 1. Dengue Virus Detection Kit (DENDETX)</p>
+            </div>
+            <br>
+            <p>We hope early detection can allow patients to get proper medical care sooner to minimize the mortality.</p>
+        </section>
+        <br>
+        <hr>
+        <section id="ref" style="word-break:break-all; word-wrap:break-all;">
+            <h4>References</h4>
+            <p>Dengue and severe dengue - World Health Organization, https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue<br>
+               Dengue Fever – Taiwan Centers of Disease Control (TCDC), https://www.cdc.gov.tw/Category/ListContent/bg0g_VU_Ysrgkes_KRUDgQ?uaid=9_Oq7OYHa-l8B05iUwyVvQ<br>
+               Sung PS., Chang WC., Hsieh SL. (2020) CLEC5A: A Promiscuous Pattern Recognition Receptor to Microbes and Beyond. In: Hsieh SL. (eds) Lectin in Host Defense Against Microbial Infections. Advances in Experimental Medicine and Biology, vol 1204. Springer, Singapore. https://doi.org/10.1007/978-981-15-1580-4_3<br>
+               Watson A. A., Lebedev A. A., Hall B. A., Fenton-May A. E., Vagin A. A., Dejnirattisai W., Felce J., Mongkolsapaya J., Palma A. S., Liu Y., Feizi T., Screaton G. R., Murshudov G. N., O'Callaghan C. A. (2011) Structural flexibility of the macrophage dengue virus receptor CLEC5A. Implications for ligand binding and signaling. J. Biol. Chem. 286, 24208–24218<br>
+               Teng O, Chen ST, Hsu TL, et al. CLEC5A-Mediated Enhancement of the Inflammatory Response in Myeloid Cells Contributes to Influenza Virus Pathogenicity In Vivo. J Virol. 2016;91(1):e01813-16. Published 2016 Dec 16. doi:10.1128/JVI.01813-16<br>
+               Sung PS., Chang WC., Hsieh SL. (2020) CLEC5A: A Promiscuous Pattern Recognition Receptor to Microbes and Beyond. In: Hsieh SL. (eds) Lectin in Host Defense Against Microbial Infections. Advances in Experimental Medicine and Biology, vol 1204. Springer, Singapore. https://doi.org/10.1007/978-981-15-1580-4_3
+            </p>
+        </section>
+    </article>
+</div>
+
+<!--gotop-->
+<div id="gotop"><a href="#"></a></div>
+<script>
+$(function(){
+    $('#gotop').click(function(){ 
+        $('html,body').animate({scrollTop:0}, "fast");
+    });
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 300 ){
+            $('#gotop').fadeIn(100);
+        } else {
+            $('#gotop').stop().fadeOut(100);
+        }
+    }).scroll();
+});
+
+$(function(){
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 600 ){
+            $('.section-nav').fadeIn("fast");
+        } else {
+            $('.section-nav').fadeOut("fast");
+        }
+    }).scroll();
+});
+
+</script>
+
+</body>
+</html>
+{{Template:CCU_Taiwan/footer}}

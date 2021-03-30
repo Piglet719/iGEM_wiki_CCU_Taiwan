@@ -1,0 +1,149 @@
+{{Template:CCU_Taiwan/bootstrap_min_css}}
+{{Template:CCU_Taiwan/modify_css}}
+{{Template:CCU_Taiwan/header}}
+{{Template:CCU_Taiwan/protocols_css}}
+
+<html>
+<head>
+
+<script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:CCU_Taiwan/JS/bootstrap&action=raw&ctype=text/javascript"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<!--Protocols-->
+<body>
+<div id="fullpage" class="infos bg_img_1">
+    <h1 class="wordcenter shadow">Protocols</h1>
+</div>
+
+<div class="contents s12 m6 l4">
+    <section id='slide-button1'>Linear Array Epitope</section>
+    <div class='container' id='container1' style="display: none;">
+        <embed src="https://2020.igem.org/wiki/images/8/81/T--CCU_Taiwan--Protocols1.pdf" type="application/pdf" width="100%" height="500px">
+    </div>
+    <br>
+    <section id='slide-button2'>Gel Extraction from Agarose & Polyacrylamide</section>
+    <div class='container' id='container2' style="display: none;">
+        <embed src="https://2020.igem.org/wiki/images/5/5a/T--CCU_Taiwan--Protocols2.pdf" type="application/pdf" width="100%" height="500px">
+    </div>
+    <br>
+    <section id='slide-button3'>Plasmid Extraction</section>
+    <div class='container' id='container3' style="display: none;">
+        <embed src="https://2020.igem.org/wiki/images/9/91/T--CCU_Taiwan--Protocols3.pdf" type="application/pdf" width="100%" height="500px">
+    </div>
+    <br>
+    <section id='slide-button4'>Ligation & Transformation</section>
+    <div class='container' id='container4' style="display: none;">
+        <embed src="https://2020.igem.org/wiki/images/c/c9/T--CCU_Taiwan--Protocols4.pdf" type="application/pdf" width="100%" height="500px">
+    </div>
+    <br>
+    <section id='slide-button5'>Colony PCR</section>
+    <div class='container' id='container5' style="display: none;">
+        <embed src="https://2020.igem.org/wiki/images/5/54/T--CCU_Taiwan--Protocols5.pdf" type="application/pdf" width="100%" height="500px">
+    </div>
+    <br>
+    <section id='slide-button6'>Protein Expression (Small & Large Scale)</section>
+    <div class='container' id='container6' style="display: none;">
+        <embed src="https://2020.igem.org/wiki/images/6/64/T--CCU_Taiwan--Protocols6.pdf" type="application/pdf" width="100%" height="500px">
+    </div>
+    <br>
+    <section id='slide-button7'>SDS PAGE</section>
+    <div class='container' id='container7' style="display: none;">
+        <embed src="https://2020.igem.org/wiki/images/3/34/T--CCU_Taiwan--Protocols7.pdf" type="application/pdf" width="100%" height="500px">
+    </div>
+    <br>
+    <section id='slide-button8'>Western Blot</section>
+    <div class='container' id='container8' style="display: none;">
+        <embed src="https://2020.igem.org/wiki/images/5/5d/T--CCU_Taiwan--Protocols8.pdf" type="application/pdf" width="100%" height="500px">
+    </div>
+    <br>
+    <section id='slide-button9'>Modification of Glass Fiber Membranes & AuNPs Preparation and Modification</section>
+    <div class='container' id='container9' style="display: none;">
+        <embed src="https://2020.igem.org/wiki/images/c/c1/T--CCU_Taiwan--Protocols9.pdf" type="application/pdf" width="100%" height="500px">
+    </div>
+</div>
+
+<!--gotop-->
+<div id="gotop"><a href="#"></a></div>
+<script>
+$(function(){
+    $('#gotop').click(function(){ 
+        $('html,body').animate({scrollTop:0}, "fast");
+    });
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 300 ){
+            $('#gotop').fadeIn(100);
+        } else {
+            $('#gotop').stop().fadeOut(100);
+        }
+    }).scroll();
+});
+
+<!--toggle-->
+let container1 = $('#container1')
+let slideButton1 = document.getElementById('slide-button1')
+function SlideToggle1() {
+    container1.slideToggle()
+}
+slideButton1.addEventListener('click', SlideToggle1)
+
+let container2 = $('#container2')
+let slideButton2 = document.getElementById('slide-button2')
+function SlideToggle2() {
+    container2.slideToggle()
+}
+slideButton2.addEventListener('click', SlideToggle2)
+
+let container3 = $('#container3')
+let slideButton3 = document.getElementById('slide-button3')
+function SlideToggle3() {
+    container3.slideToggle()
+}
+slideButton3.addEventListener('click', SlideToggle3)
+
+let container4 = $('#container4')
+let slideButton4 = document.getElementById('slide-button4')
+function SlideToggle4() {
+    container4.slideToggle()
+}
+slideButton4.addEventListener('click', SlideToggle4)
+
+let container5 = $('#container5')
+let slideButton5 = document.getElementById('slide-button5')
+function SlideToggle5() {
+    container5.slideToggle()
+}
+slideButton5.addEventListener('click', SlideToggle5)
+
+let container6 = $('#container6')
+let slideButton6 = document.getElementById('slide-button6')
+function SlideToggle6() {
+    container6.slideToggle()
+}
+slideButton6.addEventListener('click', SlideToggle6)
+
+let container7 = $('#container7')
+let slideButton7 = document.getElementById('slide-button7')
+function SlideToggle7() {
+    container7.slideToggle()
+}
+slideButton7.addEventListener('click', SlideToggle7)
+
+let container8 = $('#container8')
+let slideButton8 = document.getElementById('slide-button8')
+function SlideToggle8() {
+    container8.slideToggle()
+}
+slideButton8.addEventListener('click', SlideToggle8)
+
+let container9 = $('#container9')
+let slideButton9 = document.getElementById('slide-button9')
+function SlideToggle9() {
+    container9.slideToggle()
+}
+slideButton9.addEventListener('click', SlideToggle9)
+</script>
+</body>
+</html>
+{{Template:CCU_Taiwan/footer}}

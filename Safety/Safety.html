@@ -1,0 +1,121 @@
+{{Template:CCU_Taiwan/bootstrap_min_css}}
+{{Template:CCU_Taiwan/modify_css}}
+{{Template:CCU_Taiwan/header}}
+{{Template:CCU_Taiwan/safety_css}}
+
+<html>
+<head>
+
+<script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:CCU_Taiwan/JS/bootstrap&action=raw&ctype=text/javascript"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<!--Safety-->
+<body>
+<div id="fullpage" class="infos bg_img_1">
+    <h1 class="wordcenter shadow">Safety</h1>
+</div>
+<nav class="section-nav">
+    <ul>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#per-saf">Personal Safety</a></li>
+        <li><a href="#bio-saf">Biosafety</a></li>
+        <li><a href="#lab-saf">Labsafety</a></li>
+        <li>
+            <a href="#pro-saf">Project Safety</a>
+            <ul>
+                <li><a href="#nano">Nanoparticles</a></li>
+                <li><a href="#ecoli"><i>E. coli</i></a></li>
+            </ul>
+        </li>
+        <li><a href="#env-saf">Environmental Safety</a></li>
+    </ul>
+    <svg class="section-nav-marker" width="200" height="200"></svg>
+</nav>
+
+<div class="contents s12 m6 l4" id="text">
+    <article>
+        <section id="intro">
+            <h2>Introduction</h2>
+            <p>While we are devoted to science progress, it is also important to take safety into consideration. This document shows our compliance with the related safety rules for personal safety, biosafety, lab safety, project safety, and environmental safety.</p>
+        </section>
+        <br>
+        <section id="per-saf">
+            <h2>Personal Safety</h2>
+            <p>The fatal pneumonia COVID-19 has spread across the world this year, but fortunately the situation is well-controlled in Taiwan now. However, in early February, when it appeared a potential outbreak might happen in Taiwan, we held all our discussions via online meeting to minimize the risk of infection. When the school opened again for the second semester, we measured our body temperatures and disinfected hands with alcohol before entering any building. Moreover, we always wore masks and practiced social distancing, keeping a distance at least 1.5 meters apart inside and 1 meter outside.</p>
+        </section>
+        <br>
+        <section id="bio-saf">
+            <h2>Biosafety</h2>
+            <p>The organism we used in our experiment is WHO Risk Group 1, which means that the organism in its laboratory form does not easily cause human or animal disease. Besides, our team members received training courses to understand biohazards and preventive measures. In addition, we only used the dengue virus envelope protein, which is not pathogenic to humans, instead of the whole virus particle.</p>
+        </section>
+        <br>
+        <section id="lab-saf">
+            <h2>Labsafety</h2>
+            <p>Our lab is biosafety level 1, and the members wear personal protective equipment whenever conducting an experiment. All the team members also received training courses to learn safety of operating the lab instruments and accident response measures. Furthermore, the instruments are checked every day before an experiment to ensure that they are intact and functional.</p>
+        </section>
+        <br>
+        <section>
+            <div id="pro-saf">
+                <h2>Project Safety</h2>
+            </div>
+            <div id="nano">
+                <h3>Nanoparticles</h3>
+                <p>Nanoparticles may damage our eyes (retinas and optic nerves) when they spread in the air. They can induce damage on retinas and optic nerves, causing diseases such as retinitis and glaucoma. Therefore, we wore goggles and gloves and were careful when conducting the experiments involving gold nanoparticles. Furthermore, our reagent is covered all the time, which prevents the nanogold from escaping into the environment.</p>
+            </div>
+            <div id="ecoli">
+                <h3><i>E. coli</i></h3>
+                <p>Two strains of <i>E. coli</i> were involved in our experiments, BL21(DE3) and DH5α, which are low risk to human beings. After each experiment, we bleached and autoclaved the biowastes to ensure that the bacteria do not escape into the environment.</p>
+            </div>  
+        </section>
+        <br>
+        <section id="env-saf">
+            <h2>Environmental Safety</h2>
+            <p>The wastes generated during the experiment were collected to prevent contaminating the environment. In terms of product, the detection reagents after the reaction may contain dengue virus, so we will not sell the product directly to the consumers but only to hospitals or the government. We also advise the users in the product manual to collect the products and dispose of them properly after use.</p>
+        </section>
+        <br>
+        <hr>
+        <section id="ref" style="word-break:break-all; word-wrap:break-all;">
+            <h4>References</h4>
+            <p>World Health Organization - Laboratory biosafety manual, Third edition. World Health Organization. doi: 10.1007/SpringerReference_61629<br>
+               Taiwan Centers for Disease Control - Laboratory Biosafety Management: A Compilation of Regulations and Administrative Guidance, 4th Edition<br>
+               Biosafety level - Wikipedia<br>
+               Zhu, Shuang; Gong, Linji; Li, Yijian; Xu, Haiwei; Gu, Zhanjun; Zhao, Yuliang - Safety<br>
+               Assessment of Nanomaterials to Eyes: An Important but Neglected Issue. doi: 10.1002/advs.201802289
+            </p>
+        </section>
+    </article>
+</div>
+
+<!--gotop-->
+<div id="gotop"><a href="#"></a></div>
+<script>
+$(function(){
+    $('#gotop').click(function(){ 
+        $('html,body').animate({scrollTop:0}, "fast");
+    });
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 300 ){
+            $('#gotop').fadeIn(100);
+        } else {
+            $('#gotop').stop().fadeOut(100);
+        }
+    }).scroll();
+});
+
+$(function(){
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 600 ){
+            $('.section-nav').fadeIn("fast");
+        } else {
+            $('.section-nav').fadeOut("fast");
+        }
+    }).scroll();
+});
+
+</script>
+
+</body>
+</html>
+{{Template:CCU_Taiwan/footer}}

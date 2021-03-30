@@ -1,0 +1,145 @@
+{{Template:CCU_Taiwan/bootstrap_min_css}}
+{{Template:CCU_Taiwan/modify_css}}
+{{Template:CCU_Taiwan/header}}
+{{Template:CCU_Taiwan/design_css}}
+
+<html>
+<head>
+
+<script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:CCU_Taiwan/JS/bootstrap&action=raw&ctype=text/javascript"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<!--Design-->
+<body>
+<div id="fullpage" class="infos bg_img_1">
+    <h1 class="wordcenter shadow">Design</h1>
+</div>
+<nav class="section-nav">
+    <ul>
+        <li><a href="#ove">Overview</a></li>
+        <li><a href="#int">Introduction</a></li>
+        <li>
+            <a href="#mec">Mechanism</a>
+            <ul>
+                <li><a href="#nov">Liquid Sample without Virus</a></li>
+                <li><a href="#vi">Liquid Sample with Virus</a></li>
+            </ul>
+        </li>
+        <br>
+        <li id="abr"><b>Abbreviations</b></li>
+        <li id="abr">E protein: dengue virus envelope protein</li>
+        <li id="abr">PTRS: peptide of tandem-repeated sequence</li>
+    </ul>
+    <svg class="section-nav-marker" width="200" height="200"></svg>
+</nav>
+
+<div class="contents s12 m6 l4" id="text">
+    <article>
+        <section id="ove">
+            <h2>Overview</h2>
+            <p>Dengue fever has been a severe problem in Taiwan for a long time, but there is still no vaccine to prevent it and no medicine to cure it. Therefore, we tried to tackle this problem by producing the peptide of tandem-repeated sequences (PTRSs) that can bind to the envelope protein (E protein) of the dengue virus, providing an alternative opportunity for detection and prevention.</p>
+            <br>
+            <p>Currently, no dengue virus detection kits are made in Taiwan. Thus, our team decided to develop a detection kit for dengue virus. We used PTRSs to capture the targets in our detection kit instead of commonly used antibodies. The following are the advantages of PTRSs compared to antibodies.</p>
+            <ul>
+                <li><b>Lower cost</b></li>
+                <p>PTRSs are shorter and have a simpler structure than antibodies. Thus, the production costs of PTRSs are much lower.</p>
+                <li><b>Longer storage</b></li>
+                <p>Because PTRSs are linear and short sequence, they are not easily denatured. </p>
+                <li><b>Fast production</b></li>
+                <p>The production of antibodies requires injection of antigens into a mouse or a rabbit. After injection, several months are required to produce the antibodies. This procedure is too complex and time consuming. We use linear array epitope (LAE) to produce PTRSs, which can greatly reduce the production time, especially with the short sequences and simple structures of PTRSs.</p>
+                <li><b>Easy modification</b></li>
+                <p>A big advantage of PTRSs is that they can be modified easily. If the dengue virus mutates, we can rapidly change PTRSs to detect the mutated strain.</p>
+            </ul>
+        </section>
+        <br>
+        <section id="int">
+            <h2>Introduction</h2>
+            <p>We use a lateral flow immunochromatographic assay like the one used in a pregnancy test, mounted with PTRSs to detect the dengue virus. Our detection kit consists of the sample pad, conjugate pad, test line, control line, and absorbent pad. The sample pad and absorbent pad are made of cellulose fibers, the conjugate pad is made of glass fiber and the test line and the control line are on the other glass fiber. The functions of these pads are:</p>
+            <ul>
+                <li>Sample pad is where the liquid sample is placed.</li>
+                <li>Conjugate pad is where the dengue virus reacts with PTRSs.</li>
+                <li>Test line indicates a positive result.</li>
+                <li>Control line ensures that the detection kit is reliable.</li>
+                <li>Absorbent pad absorbs water and prevents the backflow.</li>
+            </ul>
+        </section>
+        <br>
+        <section>
+            <div id="mec">
+                <h2>Mechanism</h2>
+                <p>Two PTRSs that can bind with the dengue virus E protein are required. The first PTRSs (PTRS-1) is attached to gold nanoparticles and placed on the conjugate pad. The second PTRSs (PTRS-2) is placed on the test line. E proteins from the dengue virus are expressed and conjugated on the control line.</p>
+                <br>
+                <p>Since both PTRSs bind to the E proteins, if present, dengue virus will bind to PTRS-1 which are attached to the gold nanoparticles on the conjugate pad, then bind to PTRS-2 on the test line. PTRS-1, with the attached nanoparticles, will always bind to the E proteins on the control line.</p>
+                <br>
+                <p>Gold nanoparticles appear red when they aggregate, and the red color is visible with the naked eye, as shown in Figure 1.</p>
+                <div id="imginfo">
+                    <img width="80%" src="https://2020.igem.org/wiki/images/4/49/T--CCU_Taiwan--Design_0.png">
+                    <p>Figure 1. Components of the detection kit</p>
+                </div>
+            </div>
+            <br>
+            <div id="nov">
+                <h3>Liquid Sample without Virus</h3>
+                <p>Figure 2 shows how the detection kit works when the liquid sample does not contain dengue virus. Because there are no virus particles in the liquid sample, PTRS-1 conjugated on gold nanoparticles bind to nothing and flow past the test line. When flowing to the control line, where the E proteins are located, PTRS-1 bind to the E proteins. An aggregation of gold nanoparticles attached to PTRS-1 leads to a red band on the control line.</p>
+            </div>
+            <div id="imginfo">
+                <img width="80%" src="https://2020.igem.org/wiki/images/6/69/T--CCU_Taiwan--Design1_1.gif">
+                <p>Figure 2. Mechanism in absence of dengue virus</p>
+            </div>
+            <br>
+            <div id="vi">
+                <h3>Liquid Sample with Virus</h3>
+                <p>Figure 3 shows how the detection kit works when the liquid sample contains dengue virus. PTRS-1 conjugated on gold nanoparticles bind to the virus particles in the conjugated pad. When the virus particles reach the test line, the unbound virus surface can interact with PTRS-2 attached to the test line. These restricted virus particles lead to an aggregation of gold nanoparticles, which results in a red band indicating a positive result. The residual gold nanoparticles then flow to the control line. A red band can be found on the control line also due to the aggregation of gold nanoparticles.</p>
+            </div>
+            <div id="imginfo">
+                <img width="80%" src="https://2020.igem.org/wiki/images/b/b7/T--CCU_Taiwan--Design2_1.gif">
+                <p>Figure 3. Mechanism in presence of dengue virus</p>
+            </div>
+        </section>
+        <br>
+        <hr>
+        <section id="ref" style="word-break:break-all; word-wrap:break-all;">
+            <h4>References</h4>
+            <p>Baeumner, Antje J.; Schlesinger, Nicole A.; Slutzki, Naomi S.; Romano, Joseph; Lee, Eun Mi; Montagna, Richard A. Biosensor for dengue virus detection: Sensitive, rapid, and serotype specific. American Chemical Society. Doi: 10.1021/ac015675e<br>
+               Horstick, Olaf; Tozan, Yesim; Wilder-Smith, Annelies. Reviewing Dengue: Still a Neglected Tropical Disease? PLOS Neglected Tropical Diseases. Doi: 10.1371/journal.pntd.0003632<br>
+               Lim, Jong Min; Kim, Ji Hong; Ryu, Myung Yi; Cho, Chae Hwan; Park, Tae Jung; Park, Jong Pil. An electrochemical peptide sensor for detection of dengue fever biomarker NS1. Analytica Chimica Acta. Doi: 10.1016/j.aca.2018.04.005<br>
+               Mazbahul Kabir; Syamal Raychaudhuri; James William Needham; Stanislaw Morkowski. Lateral Flow Assaysystemand Methods Forts Use. United States Patent and Trademark Office. Patent No.: US 8, 399, 261 B2<br>
+               Wang, Hsi Kai; Tsai, Cheng Han; Chen, Kuan Hung; Tang, Chung Tao; Leou, Jiun Shyang; Li, Pi Chun; Tang, Yin Liang; Hsieh, Hsyue Jen; Wu, Han Chung; Cheng, Chao Min. Cellulose-based diagnostic devices for diagnosing serotype-2 dengue fever in human serum. WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim. Doi: 10.1002/adhm.201300150
+            </p>
+        </section>
+    </article>
+</div>
+
+<!--gotop-->
+<div id="gotop"><a href="#"></a></div>
+<script>
+$(function(){
+    $('#gotop').click(function(){ 
+        $('html,body').animate({scrollTop:0}, "fast");
+    });
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 300 ){
+            $('#gotop').fadeIn(100);
+        } else {
+            $('#gotop').stop().fadeOut(100);
+        }
+    }).scroll();
+});
+
+$(function(){
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 600 ){
+            $('.section-nav').fadeIn("fast");
+        } else {
+            $('.section-nav').fadeOut("fast");
+        }
+    }).scroll();
+});
+
+</script>
+
+</body>
+</html>
+{{Template:CCU_Taiwan/footer}}

@@ -1,0 +1,55 @@
+{{Template:CCU_Taiwan/bootstrap_min_css}}
+{{Template:CCU_Taiwan/modify_css}}
+{{Template:CCU_Taiwan/header}}
+{{Template:CCU_Taiwan/home_css}}
+
+<html>
+<head>
+<script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:CCU_Taiwan/JS/bootstrap&action=raw&ctype=text/javascript"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<!--home-->
+<body>
+<div class="color_1">
+    <video width="100%" height="auto" muted src="https://2020.igem.org/wiki/images/4/4a/T--CCU_Taiwan--home_1.mp4" autoplay="autoplay"></video>
+</div>
+        
+<div class="color">
+    <video width="100%" height="auto" muted src="https://2020.igem.org/wiki/images/b/b6/T--CCU_Taiwan--home_2.mp4" loop autoplay="autoplay"></video>
+</div>
+        
+<div id="fullpage_3" class="fixed_bg color">
+    <img id="home_img3" width="90%" src="https://2020.igem.org/wiki/images/f/f2/T--CCU_Taiwan--home_3.png">
+    <img id="home_img3_1" width="80%" src="https://2020.igem.org/wiki/images/b/ba/T--CCU_Taiwan--home_3_1.png">
+    <img id="home_img3_2"  src="https://2020.igem.org/wiki/images/b/b9/T--CCU_Taiwan--home_3_2.png">
+</div>
+
+<div class="color">
+    <video width="100%" height="auto" muted src="https://2020.igem.org/wiki/images/7/78/T--CCU_Taiwan--home_4.mp4" loop autoplay="autoplay"></video>
+</div>
+
+<div id="fullpage_5" class="fixed_bg color">
+    <video id="home_video5" width="70%" height="auto" muted="true" src="https://2020.igem.org/wiki/images/2/20/T--CCU_Taiwan--home_5.mp4" controls="controls"></video>
+</div>
+
+<!--gotop-->
+<div id="gotop"><a href="#"></a></div>
+<script>
+$(function(){
+    $('#gotop').click(function(){ 
+        $('html,body').animate({scrollTop:0}, 1000);
+    });
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 300 ){
+            $('#gotop').fadeIn(100);
+        } else {
+            $('#gotop').stop().fadeOut(100);
+        }
+    }).scroll();
+});
+</script>
+
+</body>
+</html>
+{{Template:CCU_Taiwan/footer}}

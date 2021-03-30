@@ -1,0 +1,629 @@
+<html>
+<style>
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow: auto;
+    height: 100%;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+#fullpage {
+    height: 100vh;
+}
+
+.infos {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg_img_1{
+    background-image: url(https://2020.igem.org/wiki/images/d/d0/T--CCU_Taiwan--Team_Member.jpeg);
+    padding-top: 68px;
+}
+
+.wordcenter{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    font-size: 8rem;
+    filter: none;
+}
+
+.shadow{
+    text-shadow: 1px 1px 7px rgba(0, 0, 0, .9);
+    box-shadow: 0 0 0 rgba(0,0,0,0)!important;
+}
+
+article,
+nav,
+section {
+    display: block;
+}
+
+h1 {
+    font-size: 2em;
+    color: #fff;
+    z-index: 100;
+}
+
+a {
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+a:active,
+a:hover {
+    outline-width: 0;
+}
+
+:target:before {
+    content: "";
+    display: block;
+    height: 70px;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+.section-nav {
+    position: fixed;
+    left: 3em;
+    top: 5em;
+    padding: 5em 1em;
+    width: 13em;
+    line-height: 2;
+    font-size: 18px;
+    padding-bottom: 50em;
+}
+
+.section-nav-marker {
+    border-right: 1px solid #efefef;
+    max-height: 20em;
+}
+
+@media (max-height: 600px) {
+    .section-nav {
+        padding: 2em 1em 12em 1em;
+    }
+}
+
+@media (max-height: 500px) {
+    .section-nav,
+    .section-nav ul,
+    .section-nav ul ul,
+    .section-nav li a,
+    .section-nav-marker {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+.section-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.section-nav ul ul {
+    padding-left: 2em;
+}
+
+.section-nav li a {
+    display: inline-block;
+    color: #aaa;
+    text-decoration: none;
+    -webkit-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.section-nav li.visible > a {
+    color: rgba(155,30,30);
+    font-weight: 500;
+    -webkit-transform: translate(5px);
+    transform: translate(5px);
+}
+
+.section-nav li a:hover {
+    color: rgba(155,30,30,.8);
+    font-weight: 550;
+}
+
+.section-nav-marker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.contents {
+    padding: 1em 2em 2em 17em;
+    max-width: 1400px;
+    font-size: 1.2em;
+}
+
+.contents h2 h3 {
+    padding-top: 1em;
+}
+
+h2 {
+    color: rgba(155,30,30);
+    font-weight: 600;
+}
+
+.logo-img {
+    padding-right: 16px;
+    padding-bottom: 1em;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.dialog {
+    position:fixed;
+    display:none;
+    border-radius: 3px;
+    top: 0em;
+    left: 0em;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 10000;
+}
+
+.dialog>.close {
+    position: absolute;
+    top: 15%;
+    right: 1%;
+    cursor:pointer;
+    border: 1px solid rgba(155, 30, 30);
+    background-color: rgba(155, 30, 30);
+    border-radius: 3px;
+    color: white;
+    padding: 5px 10px;
+    font-size: medium;
+}
+
+.dialog>.close:hover{
+  color:rgba(155, 30, 30);
+  background-color:white;
+}
+
+#imginfo {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    border:1px solid #888888;
+    background-color: #efefef;
+    box-shadow:0px 0px 10px;
+    padding: 10px;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 3px;
+    width: 55%;
+}
+
+@media (max-width: 1150px) {
+    #imginfo {
+        width: 60%;
+    }
+}
+
+@media (max-width: 900px) {
+    .section-nav,
+    .section-nav ul,
+    .section-nav ul ul,
+    .section-nav li a,
+    .section-nav-marker {
+        display: none;
+        visibility: hidden;
+    }
+
+    #text {
+        padding: 2em;
+    }
+
+    #imginfo {
+        width: 65%;
+    }
+}
+
+@media (max-width: 850px) {
+    .wordcenter {
+        font-size: 7rem;
+    }
+
+    #imginfo {
+        width: 70%;
+    }
+}
+
+@media (max-width: 750px) {
+    .wordcenter {
+        font-size: 6rem;
+    }
+
+    #imginfo {
+        width: 75%;
+    }
+}
+
+@media (max-width: 650px) {
+    .wordcenter {
+        font-size: 5rem;
+    }
+
+    #imginfo {
+        width: 80%;
+    }
+}
+
+/*member*/
+#pi4 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/2/23/T--CCU_Taiwan--pi4.jpg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#pi4:hover {
+    opacity: 0.8;
+}
+
+#instructors1 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/0/04/T--CCU_Taiwan--instructors1.jpeg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#instructors1:hover {
+    opacity: 0.8;
+}
+
+#instructors2 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/f/f0/T--CCU_Taiwan--instructors2.jpeg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#instructors2:hover {
+    opacity: 0.8;
+}
+
+#advisors5 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/9/93/T--CCU_Taiwan--advisors5.jpg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#advisors5:hover {
+    opacity: 0.8;
+}
+
+#advisors6 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/8/85/T--CCU_Taiwan--advisors6.jpg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#advisors6:hover {
+    opacity: 0.8;
+}
+
+#pi1 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/9/95/T--CCU_Taiwan--pi1.jpg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#pi1:hover {
+    background: url(https://2020.igem.org/wiki/images/c/c4/T--CCU_Taiwan--pi1_1.jpg);
+}
+
+#pi2 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/b/bc/T--CCU_Taiwan--pi2.jpg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#pi2:hover {
+    background: url(https://2020.igem.org/wiki/images/8/80/T--CCU_Taiwan--pi2_1.jpg);
+}
+
+#pi3 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/9/91/T--CCU_Taiwan--pi3.jpg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#pi3:hover {
+    background: url(https://2020.igem.org/wiki/images/d/d7/T--CCU_Taiwan--pi3_1.jpg);
+}
+
+#advisors1 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/b/b0/T--CCU_Taiwan--advisors1.jpeg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#advisors1:hover {
+    background: url(https://2020.igem.org/wiki/images/3/30/T--CCU_Taiwan--advisors1_1.jpeg);
+}
+
+#advisors2 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/b/b5/T--CCU_Taiwan--advisors2.jpeg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#advisors2:hover {
+    background: url(https://2020.igem.org/wiki/images/1/12/T--CCU_Taiwan--advisors2_1.jpeg);
+}
+
+#advisors3 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/9/92/T--CCU_Taiwan--advisors3.jpeg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#advisors3:hover {
+    background: url(https://2020.igem.org/wiki/images/d/d0/T--CCU_Taiwan--advisors3_1.jpeg);
+}
+
+#advisors4 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/4/46/T--CCU_Taiwan--advisors4.jpeg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#advisors4:hover {
+    background: url(https://2020.igem.org/wiki/images/f/ff/T--CCU_Taiwan--advisors4_1.jpeg);
+}
+
+#instructors3 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/b/b6/T--CCU_Taiwan--instructors3.jpeg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#instructors3:hover {
+    background: url(https://2020.igem.org/wiki/images/c/c7/T--CCU_Taiwan--instructors3_1.jpeg);
+}
+
+#dl1 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/0/08/T--CCU_Taiwan--dl1.jpeg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#dl1:hover {
+    background: url(https://2020.igem.org/wiki/images/4/42/T--CCU_Taiwan--dl1_1.jpeg);
+}
+
+#dl2 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/1/14/T--CCU_Taiwan--dl2.jpeg);
+    height: 200px;
+    width: 300px;
+    display: inline-block;
+    padding: 0;
+}
+
+#dl2:hover {
+    background: url(https://2020.igem.org/wiki/images/6/6c/T--CCU_Taiwan--dl2_1.jpeg);
+}
+#dl3 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/9/9f/T--CCU_Taiwan--dl3.jpeg);
+    height: 200px;
+    width: 300px;
+    display: inline-block;
+    padding: 0;
+}
+
+#dl3:hover {
+    background: url(https://2020.igem.org/wiki/images/2/26/T--CCU_Taiwan--dl3_1.jpeg);
+}
+
+#dl4 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/c/c1/T--CCU_Taiwan--dl4.jpeg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#dl4:hover {
+    background: url(https://2020.igem.org/wiki/images/9/93/T--CCU_Taiwan--dl4_1.jpeg);
+}
+
+#hp2 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/5/5d/T--CCU_Taiwan--hp2.jpeg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#hp2:hover {
+    background: url(https://2020.igem.org/wiki/images/6/6a/T--CCU_Taiwan--hp2_1.jpeg);
+}
+
+#hp1 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/2/23/T--CCU_Taiwan--hp1.jpeg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#hp1:hover {
+    background: url(https://2020.igem.org/wiki/images/5/5c/T--CCU_Taiwan--hp1_1.jpeg);
+}
+
+#hp3 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/e/ed/T--CCU_Taiwan--hp3.jpeg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#hp3:hover {
+    background: url(https://2020.igem.org/wiki/images/d/d3/T--CCU_Taiwan--hp3_1.jpeg);
+}
+
+#wl1 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/0/0d/T--CCU_Taiwan--wl1.jpeg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#wl1:hover {
+    background: url(https://2020.igem.org/wiki/images/b/ba/T--CCU_Taiwan--wl1_1.jpeg);
+}
+
+#wl2 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/9/97/T--CCU_Taiwan--wl2.jpeg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#wl2:hover {
+    background: url(https://2020.igem.org/wiki/images/3/30/T--CCU_Taiwan--wl2_1.jpeg);
+}
+
+#wl3 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/3/36/T--CCU_Taiwan--wl3.jpeg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#wl3:hover {
+    background: url(https://2020.igem.org/wiki/images/2/2f/T--CCU_Taiwan--wl3_1.jpeg);
+}
+
+#wl4 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/2/2f/T--CCU_Taiwan--wl4.jpeg);
+    height: 200px;
+    width: 300px;
+    display: inline-block;
+    padding: 0;
+}
+
+#wl4:hover {
+    background: url(https://2020.igem.org/wiki/images/3/31/T--CCU_Taiwan--wl4_1.jpeg);
+}
+
+#wl5 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/e/e6/T--CCU_Taiwan--wl5.jpeg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#wl5:hover {
+    background: url(https://2020.igem.org/wiki/images/4/48/T--CCU_Taiwan--wl5_1.jpeg);
+}
+
+#wl6 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/2/2a/T--CCU_Taiwan--wl6.jpeg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#wl6:hover {
+    background: url(https://2020.igem.org/wiki/images/9/97/T--CCU_Taiwan--wl6_1.jpeg);
+}
+
+#wl7 {
+    cursor:pointer;
+    background: url(https://2020.igem.org/wiki/images/a/a3/T--CCU_Taiwan--wl7.jpeg);
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+}
+
+#wl7:hover {
+    background: url(https://2020.igem.org/wiki/images/b/be/T--CCU_Taiwan--wl7_1.jpeg);
+}
+</style>
+</html>

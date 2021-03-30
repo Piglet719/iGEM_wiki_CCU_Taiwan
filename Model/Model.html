@@ -1,0 +1,515 @@
+{{Template:CCU_Taiwan/bootstrap_min_css}}
+{{Template:CCU_Taiwan/modify_css}}
+{{Template:CCU_Taiwan/header}}
+{{Template:CCU_Taiwan/model_css}}
+
+<html>
+<head>
+
+<script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:CCU_Taiwan/JS/bootstrap&action=raw&ctype=text/javascript"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<!--Model-->
+<body>
+<div id="fullpage" class="infos bg_img_1">
+    <h1 class="wordcenter shadow">Model</h1>
+</div>
+<section class="imgbut">
+    <section id="but1" onclick="display('ros')"><a href="#ros"><img src="https://2020.igem.org/wiki/images/b/b5/T--CCU_Taiwan--Model_1.png"></a></section>
+    <section id="but2" onclick="display('nano')"><a href="#nano"><img src="https://2020.igem.org/wiki/images/8/8f/T--CCU_Taiwan--Model_2.jpg"></a></section>
+</section>
+<nav class="section-nav">
+    <ul>
+        <li>Rosetta</li>
+        <li onclick="display1('ros')"><a href="#ove">Overview</a></li>
+        <li onclick="display1('ros')">
+            <a href="#pro">Protocols</a>
+            <ul>
+                <li onclick="display1('ros')"><a href="#cm">RosettaCM</a></li>
+                <li onclick="display1('ros')"><a href="#ab"><i>Ab initio</i></a></li>
+                <li onclick="display1('ros')"><a href="#clu">Clustering</a></li>
+                <li onclick="display1('ros')"><a href="#ppd">Protein-Protein Docking</a></li>
+            </ul>
+        </li>
+        <li>DLVO theory</li>
+        <li onclick="display1('nano')"><a href="#ove1">Overview</a></li>
+        <li onclick="display1('nano')"><a href="#rep">Repulsion between Gold Nanoparticles</a></li>
+        <br>
+        <li id="abr"><b>Abbreviations</b></li>
+        <li id="abr">E protein: dengue virus envelope protein</li>
+        <li id="abr">PTRS: peptide of tandem-repeated sequence</li>
+    </ul>
+    <svg class="section-nav-marker" width="200" height="200"></svg>
+</nav>
+
+<div class="contents s12 m6 l4" id="text" style="display:none">
+    <article>
+        <section id="ros" style="display:none">
+            <section id="ove">
+                <h2>Overview</h2>
+                <p>Our goal is to design the peptides of tandem-repeated sequence (PTRSs) to imitate C-type lectin domain, family 5, member A (CLEC5A) docking with dengue virus. In order to ensure the PTRs and the envelope protein (E protein) of dengue virus have an interaction, all the structure of PTRSs and proteins and their interactions were modeled using Rosetta. First, we utilized RosettaCM (Comparative modeling with Rosetta) to generate the structure of E protein from a local strain (PL046) based on the crystal structure (PDB: 1OAN). Second, we used the <i>ab initio</i> method to predict the PTRSs structures purely based on their sequences. Then, we utilized the clustering method to cluster the results and find the most probable structure of the PTRS. Finally, we verified the interactions between these predicted PTRSs and the E protein based on the global protein-protein docking. Figure 1 shows the flow of our simulation.</p>
+                <br>
+                <div id="imginfo2">
+                    <img id="imginfo1" src="https://2020.igem.org/wiki/images/8/89/T--CCU_Taiwan--Model_flow.png">
+                    <p>Figure 1. The flow of our simulation procedures</p>
+                </div>
+            </section>
+            <br>
+            <section>
+                <div id="pro">
+                    <h2>Protocols</h2>
+                </div>
+                <div id="cm">
+                    <h3>RosettaCM (Comparative modeling with Rosetta)</h3>
+                    <p>Purpose: To generate the structure of E protein (PL046)</p>
+                    <ol>
+                        <li>Create a threaded model</li>
+                        <p>Input: </p>
+                        <ul>
+                            <li>Target sequence in a fasta file</li>
+                            <li>Sequence alignment file in the Grishin format</li>
+                            <li>Template PDB file</li>
+                        </ul>
+                        <p>Output: A PDB file of threaded template.</p>
+                        <br>
+                        <section id='slide-button1'>Commands and Flags</section>
+                        <div class='container' id='container1' style="display: none;">
+                            <p>Commands: partial_thread.static.linuxgccrelease @flag_threading<br>
+                               Flags:<br>
+                               -in:file:fasta Eprotein_pl046.fasta<br>
+                               -in:file:alignment Eprotein_pl046_B.grishin<br>
+                               -in:file:template_pdb Eprotein_B.pdb<br>
+                               -ignore_unrecognized_res</p>
+                        </div>
+                        <br>
+                        <li>Run the hybridization mover</li>
+                        <p>Input: </p>
+                        <ul>
+                            <li>Target sequence in a fasta file</li>
+                            <li>RosettaScripts xml file: </li>
+                            <ul>
+                                <li>The weight files</li>
+                                <li>Target sequence fragments files: 3-residue fragments and 9-residue fragments</li>
+                                <li>The PDB file of threaded template from step 1</li>
+                            </ul>
+                        </ul>
+                        <p>Output: PDB files after hybridization.</p>
+                        <br>
+                        <section id='slide-button2'>Commands and Flags</section>
+                        <div class='container' id='container2' style="display: none;">
+                            <p>Commands: rosetta_scripts.static.linuxgccrelease @flag_hybridize<br>
+                               Flags:<br>
+                               -in:file:fasta Eprotein_pl046.fasta<br>
+                               -parser:protocol rosetta_cm.xml<br>
+                               -nstruct 1000<br>
+                               -out:suffix _001<br>
+                               -out:path:pdb ./result<br>
+                               -relax:minimize_bond_angles<br>
+                               -relax:minimize_bond_lengths<br>
+                               -relax:jump_move true<br>
+                               -default_max_cycles 200<br>
+                               -relax:min_type lbfgs_armijo_nonmonotone<br>
+                               -relax:jump_move true<br>
+                               -score:weights stage3.wts<br>
+                               -use_bicubic_interpolation<br>
+                               -hybridize:stage1_probability 1.0<br>
+                               -chemical:exclude_patches LowerDNA  UpperDNA Cterm_amidation SpecialRotamer VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated  tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated  lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm</p>
+                        </div>
+                        <br>
+                        <li>Final relax</li>
+                        <p>Input: </p>
+                        <ul>
+                            <li>Disulfide bond</li>
+                            <li>PDB files generated from step 2</li>
+                        </ul>
+                        <p>Output: About 10,000 results. (The lowest Rosetta score of the structure is shown in Figure 2)</p>
+                        <br>
+                        <section id='slide-button3'>Commands and Flags</section>
+                        <div class='container' id='container3' style="display: none;">
+                            <p>Commands: relax.static.linuxgccrelease @flag_relax<br>
+                               Flags:<br>
+                               -in:fix_disulf Eprotein_pl046.disulfide<br>
+                               -in:file:l pdblist<br>
+                               -nstruct 1<br>
+                               -in:detect_disulf true<br>
+                               -default_max_cycles 3000<br>
+                               -out:suffix _relax<br>
+                               -out:file:fullatom<br>
+                               -out:path:pdb ./result</p>
+                        </div>
+                    </ol>
+                </div>
+                <br>
+                <div id="imginfo2">
+                    <video width="90%" height="auto" muted src="https://2020.igem.org/wiki/images/0/04/T--CCU_Taiwan--Model_Rosetta3.mp4" loop autoplay="autoplay"></video>
+                    <p>Figure 2. The homology structure of PL046 E protein in cyan based on the deposited structure (PDB: 1OAN) in magenta</p>
+                </div>
+                <br>
+                <div id="ab">
+                    <h3><i>Ab initio</i></h3>
+                    <p>Purpose: To generate the structure of the PTRSs</p>
+                    <p>Input: </p>
+                    <ul>
+                        <li>Protein sequence in fasta format</li>
+                        <li>Fragment library: 3-residue fragments and 9-residue fragments</li>
+                        <li>Psipred-ss2 (optional)</li>
+                        <p>The last two inputs were generated from <a href="https://robetta.bakerlab.org/fragmentsubmit.jsp" target="_blank">Robetta</a> Fragment</p>
+                    </ul>
+                    <p>Output: About 20,000 results. (Two of the representative structures are shown in Figure 3)</p>
+                    <br>
+                    <section id='slide-button4'>Commands and Flags</section>
+                    <div class='container' id='container4' style="display: none;">
+                        <p>Commands: AbinitioRelax.static.linuxgccrelease @flags<br>
+                           Flags:<br>
+                           -in:file:fasta ./input_files/t000_.fasta<br>
+                           -in:file:frag3 ./input_files/aat000_03_05.200_v1_3<br>
+                           -in:file:frag9 ./input_files/aat000_09_05.200_v1_3<br>
+                           -abinitio:relax<br>
+                           -nstruct 2000<br>
+                           -seed_offset 10<br>
+                           -use_filters true<br>
+                           -psipred_ss2 ./input_files/t000_.psipred_ss2<br>
+                           -abinitio::increase_cycles 10<br>
+                           -abinitio::rg_reweight 0.5<br>
+                           -abinitio::rsd_wt_helix 0.5<br>
+                           -abinitio::rsd_wt_loop 0.5<br>
+                           -relax::fast<br>
+                           -out:file:silent fold_silent0001.out<br>
+                           -out:sf score0001.fsc</p>
+                    </div>
+                    <br>
+                    <p>We did not find the "funnel shape" from the plot of "Rosetta energy score vs RMSD" for the best 1,000 structures, which suggests there might be no single stable conformation.
+                    </p>
+                    <section id='slide-button9'>Results</section>
+                    <div class='container' id='container9' style="display: none;">
+                    <embed src="https://2020.igem.org/wiki/images/d/df/T--CCU_Taiwan--Model_pdf.pdf" type="application/pdf" width="100%" height="500px">
+                </div>
+                <br>
+                <div id="imginfo2">
+                    <div id="imginfo3">
+                        <img width="100%" src="https://2020.igem.org/wiki/images/1/10/T--CCU_Taiwan--Model_Rosetta1.jpg">
+                    </div>
+                    <div id="imginfo3">
+                        <img width="100%" src="https://2020.igem.org/wiki/images/7/7d/T--CCU_Taiwan--Model_Rosetta2.jpg">
+                    </div>
+                    <p>Figure 3. Two of the representative structures of PTRS</p>
+                </div>
+                <br>
+                <div id="clu">
+                    <h3>Clustering</h3>
+                    <p>Purpose: To cluster the results and find the most probable structure</p>
+                    <ol>
+                        <li>Rescore the thousands of results</li>
+                        <p>Input: The <i>ab initio</i> results.</p>
+                        <p>Output: The clustering scores.</p>
+                        <br>
+                        <section id='slide-button5'>Commands</section>
+                        <div class='container' id='container5' style="display: none;">
+                            <p>score_jd2.static.linuxgccrelease -in:file:s 110_7/*.pdb -out:file:silent scored_silent110_7.out -out:file:silent_struct_type binary -in:file:fullatom</p>
+                        </div>
+                        <br>
+                        <li>Energy cut-off</li>
+                        <p>Input: The clustering scores.</p>
+                        <p>Output: The results passing the energy cut-off.</p>
+                        <br>
+                        <section id='slide-button6'>Commands</section>
+                        <div class='container' id='container6' style="display: none;">
+                            <p>python make_sub_silent_file_percentile.py scored_silent110_7.out ecut110_7.out -1 0.10</p>
+                        </div>
+                        <br>
+                        <li>Extract the results</li>
+                        <p>Input: The results passing the energy cut-off.</p>
+                        <p>Output: The structures sorted by clustering. (We chose the lowest score to simulate protein and protein docking.)</p>
+                        <br>
+                        <section id='slide-button7'>Commands and Flags</section>
+                        <div class='container' id='container7' style="display: none;">
+                            <p>Commands: cluster.static.linuxgccrelease @flag_cluster<br>
+                               Flags:<br>
+                               -in:file:silent ecut110_7.out<br>
+                               -in:file:silent_struct_type binary<br>
+                               -in:file:fullatom<br>
+                               -cluster:gdtmm<br>
+                               -cluster:population_weight 0.0<br>
+                               -cluster:radius -1<br>
+                               -cluster:sort_groups_by_energy<br>
+                               -out:file:silent clustered110_7.out<br>
+                               -score:weights score12.wts<br>
+                               -score:patch<br>
+                               -out:file:silent_struct_type binary<br>
+                               -run:shuffle</p>
+                        </div>
+                    </ol>
+                </div>
+                <br>
+                <div id="ppd">
+                    <h3>Protein-Protein Docking (global docking)</h3>
+                    <p>Purpose: To find the interaction between PTRSs and E Protein</p>
+                    <p>Input: The structures of ligand (PTRS or CLEC5A) and receptor (E protein) in the same input file.</p>
+                    <p>Output: About 10,000 results. (The most 100 frequent docking sites are shown in Figure 4)</p>
+                    <br>
+                    <section id='slide-button8'>Commands and Flags</section>
+                    <div class='container' id='container8' style="display: none;">
+                        <p>Commands: docking_protocol.static.linuxgccrelease @flag_global_docking<br>
+                           Flags:<br>
+                           -in:file:s input_files/110_7_PL046noglycan.pdb<br>
+                           -nstruct 2000<br>
+                           -partners A_B<br>
+                           -randomize1<br>
+                           -randomize2<br>
+                           -center_at_interface<br>
+                           -ex1<br>
+                           -ex2aro<br>
+                           -out:path:all output_files<br>
+                           -out:suffix _global_dock1</p>
+                    </div>
+                    <br>
+                    <div id="imginfo2">
+                        <video width="90%" height="auto" muted src="https://2020.igem.org/wiki/images/6/62/T--CCU_Taiwan--Model_Rosetta4.mp4" loop autoplay="autoplay"></video>
+                        <p>Figure 4. The best 100 results (based on the Rosetta score) of PTRS-1 or PTRS-2 docking to PL046 E protein (in red). The space above the plane (in grey) indicates the external surface of the virions, where the interactions occur.</p>
+                    </div>
+                    <br>
+                </div>
+            </section>
+            <br>
+        </section>
+        <br>
+        <section id="nano" style="display:none">
+            <section id="ove1">
+                <h2>Overview</h2>
+                <p>The weakness of our design is that the PTRSs from the gold nanoparticles and the ones from the glass fiber compete for the same binding sites on the E protein. Moreover, if the E proteins on the virus particles are fully covered by the gold nanoparticles, there are no sites available to interact the PTRSs from the glass fiber.</p>
+            </section>
+            <br>
+            <section id="rep">
+                <h2>Repulsion between gold nanoparticles</h2>
+                <p>To assess this potential problem, we used DLVO theory to calculate the repulsion between gold nanoparticles to estimate the number of gold nanoparticles that would bind to a virus particle. The structure of dengue virus is icosahedral, and there are three E proteins on each surface. The distances between the potential binding sites can be obtained from the structure in protein data bank (1K4R). DLVO theory can be described as Equation 1.</p>
+                <br>
+                <h4>W<sub>total</sub>(D) = W<sub>a</sub>(D) + W<sub>r</sub>(D) = -AR/12D + 2πεε<sub>0</sub>R&Psi;<sub>&delta;</sub><sup>2</sup>exp(-κD) &emsp;&emsp; Equation 1. </h4>
+                <br>
+                <p>W<sub>total</sub>(D): total energy<br>
+                   W<sub>a</sub>(D): van der Waals interaction energy<br>
+                   W<sub>r</sub>(D): electrostatic interaction energy<br>
+                   A: Hamaker constant = 2.5×10<sup>-19</sup> J<br>
+                   R: radius = 1.3x10<sup>-8</sup> m (based on the size of gold nanoparticles)<br>
+                   C: center to center distance<br>
+                   D: C-R<br>
+                   ε: permittivity of vacuum = 8.854x10<sup>-12</sup> F/m<br>
+                   ε<sub>0</sub>: dielectric of solution = 80.4 (at 20°C)<br>
+                   &Psi;<sub>&delta;</sub><sup>2</sup>: Stern layer potential (zeta potential) = 1.794 mV<br>
+                   κ<sup>-1</sup>: diffuse layer thickness = 7.95x10<sup>-10</sup> m<br>
+                 </p>
+                 <br>
+                 <p>We took several representative positions on adjoining faces of the icosahedron to calculate the interactions between the gold nanoparticles based on DLVO theory. We found the total energies are all positive (Table 1), and these total energies are also larger than the typical biological interactions (~0.5 kcal/mol or 3.49 x10<sup>21</sup> J). The results suggest that there will always be free faces on the virus particles to interact with the PTRS-2 conjugated on the test line.</p>
+                 <br>
+                 <div id="imginfo2">
+                     <p>Table 1. The representative energies of the interaction between the gold nanoparticles.</p>
+                 </div>
+                 <table>
+                     <tbody>
+                         <tr>
+                             <th></th>
+                             <th><img id="imginfo" src="https://2020.igem.org/wiki/images/b/b1/T--CCU_Taiwan--Model01.png"></th>
+                             <th><img id="imginfo" src="https://2020.igem.org/wiki/images/4/43/T--CCU_Taiwan--Model02.png"></th>
+                             <th><img id="imginfo" src="https://2020.igem.org/wiki/images/5/53/T--CCU_Taiwan--Model03.png"></th>
+                             <th><img id="imginfo" src="https://2020.igem.org/wiki/images/1/14/T--CCU_Taiwan--Model04.png"></th>
+                         </tr>
+                         <tr>
+                             <td>C (nm)</td>
+                             <td>54.58</td>
+                             <td>42.71</td>
+                             <td>31.71</td>
+                             <td>43.24</td>
+                         </tr>
+                         <tr>
+                             <td>Attractive energy (10<sup>-21</sup>J)</td>
+                             <td>-3.3</td>
+                             <td>-4.6</td>
+                             <td>-7.2</td>
+                             <td>-4.5</td>
+                         </tr>
+                         <tr>
+                             <td>Repulsive energy (10<sup>-21</sup>J)</td>
+                             <td>51.0</td>
+                             <td>51.3</td>
+                             <td>51.6</td>
+                             <td>51.3</td>
+                         </tr>
+                         <tr>
+                             <td>Total energy (10<sup>-21</sup>J)</td>
+                             <td>47.7</td>
+                             <td>46.7</td>
+                             <td>44.4</td>
+                             <td>46.8</td>
+                         </tr>
+                         <tr>
+                             <th></th>
+                             <th><img id="imginfo" src="https://2020.igem.org/wiki/images/6/6a/T--CCU_Taiwan--Model05.png"></th>
+                             <th><img id="imginfo" src="https://2020.igem.org/wiki/images/a/a4/T--CCU_Taiwan--Model06.png"></th>
+                             <th><img id="imginfo" src="https://2020.igem.org/wiki/images/3/3b/T--CCU_Taiwan--Model07.png"></th>
+                             <th><img id="imginfo" src="https://2020.igem.org/wiki/images/3/3c/T--CCU_Taiwan--Model08.png"></th>
+                         </tr>
+                         <tr>
+                             <td>C (nm)</td>
+                             <td>30.32</td>
+                             <td>31.06</td>
+                             <td>33.19</td>
+                             <td>30.32</td>
+                         </tr>
+                         <tr>
+                             <td>Attractive energy (10<sup>-21</sup>J)</td>
+                             <td>-7.8</td>
+                             <td>-7.5</td>
+                             <td>-6.7</td>
+                             <td>-7.8</td>
+                         </tr>
+                         <tr>
+                             <td>Repulsive energy (10<sup>-21</sup>J)</td>
+                             <td>51.7</td>
+                             <td>51.7</td>
+                             <td>51.6</td>
+                             <td>51.7</td>
+                         </tr>
+                         <tr>
+                             <td>Total energy (10<sup>-21</sup>J)</td>
+                             <td>43.9</td>
+                             <td>44.2</td>
+                             <td>44.9</td>
+                             <td>43.9</td>
+                         </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+        <br>
+        <hr>
+        <section id="ref" style="word-break:break-all; word-wrap:break-all;">
+            <h4>References</h4>
+            <p>Combs, Steven A., Deluca, Samuel L., Deluca, Stephanie H., Lemmon, Gordon H., Nannemann, David P., Nguyen, Elizabeth D., Willis, Jordan R., Sheehan, Jonathan H. & Meiler, Jens. (2013). Small-molecule ligand docking into comparative models with Rosetta. Nature Protocols, 8(7), 1277-1298. doi: 10.1038/nprot.2013.074<br>
+               Raveh, Barak., London, Nir., Zimmerman, Lior. & Schueler-Furman, Ora. (2011). Rosetta FlexPepDockab-initio: Simultaneous folding, docking and refinement of peptides onto their receptors. PLoS ONE, 6(4). doi: 10.1371/journal.pone.0018934<br>
+               Alam, Nawsad., Goldstein, Oriel., Xia, Bing., Porter, Kathryn A., Kozakov, Dima. & Schueler-Furman, Ora. (2017). High-resolution global peptide-protein docking using fragments-based PIPER-FlexPepDock. PLoS Computational Biology, 13(12), 1-20. doi: 10.1371/journal.pcbi.1005905<br>
+               Barrientos, Arturo. & Concha, Fernando. (1990). Phenomenological model of classification in conventional hydrocylones. Comminution, 819(1), 287-305. doi: 10.1007/978-1-61779-465-0<br>
+               Li, Haiou., Lu, Liyao., Chen, Rong., Quan, Lijun., Xia, Xiaoyan. & Lü, Qiang. (2014). PaFlexPepDock:  Parallel Ab-initio docking of peptides onto their receptors with full flexibility based on Rosetta. PLoS ONE, 9(5). doi: 10.1371/journal.pone.0094769<br>
+               Ciemny, Maciej., Kurcinski, Mateusz., Kamel, Karol., Kolinski, Andrzej., Alam, Nawsad., Schueler-Furman, Ora. & Kmiecik, Sebastian. (2018). Protein–peptide docking:  opportunities and challenges. Drug Discovery Today, 23(8), 1530-1537. doi: 10.1016/j.drudis.2018.05.006<br>
+               Elena Pokidysheva, Ying Zhang, Anthony J. Battisti, Carol M. Bator-Kelly, Paul R. Chipman, Chuan Xiao, G. Glenn Gregorio, Wayne A. Hendrickson, Richard J. Kuhn, Michael G. Rossmann. Cryo-EM Reconstruction of Dengue Virus in Complex with the Carbohydrate Recognition Domain of DC-SIGN. Cell Press, 124(3). doi:10.1016<br>
+               Jörg Polte. Fundamental growth principles of colloidal metal nanoparticles – a new perspective. CrystEngComm, 36. doi:10.1039<br>
+               Phillip E. Mason, Adrien Lerbret, Marie-Louise Saboungi, George W. Neilson, Christopher E. Dempsey, John W. Brady. Glucose Interactions with a Model Peptide. NCBI, 79(7). doi:10.1002<br>
+               Taehoon Kim, Kangtaek Lee, Myoung-seon Gong, Sang-Woo Joo. Control of Gold Nanoparticle Aggregates by Manipulation of Interparticle Interaction. ACS Publications. doi:10.1021
+            </p>
+        </section>
+    </article>
+</div>
+
+<!--gotop-->
+<div id="gotop"><a href="#"></a></div>
+<script>
+$(function(){
+    $('#gotop').click(function(){ 
+        $('html,body').animate({scrollTop:0}, "fast");
+    });
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 300 ){
+            $('#gotop').fadeIn(100);
+        } else {
+            $('#gotop').stop().fadeOut(100);
+        }
+    }).scroll();
+});
+
+$(function(){
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 600 ){
+            $('.section-nav').fadeIn("fast");
+        } else {
+            $('.section-nav').fadeOut("fast");
+        }
+    }).scroll();
+});
+
+function display(id){  
+    var item=document.getElementById(id);
+    var item1=document.getElementById("text");
+    if(item.style.display=="none"){ 
+        item1.style.display=""; 
+        item.style.display="";
+    }else{  
+        item.style.display="none";  
+    }
+}
+
+function display1(id){  
+    var item=document.getElementById(id);
+    var item1=document.getElementById("text");
+    if(item.style.display=="none"){  
+        item.style.display="";
+        item1.style.display="";
+    }
+}
+
+let container1 = $('#container1')
+let slideButton1 = document.getElementById('slide-button1')
+function SlideToggle1() {
+    container1.slideToggle()
+}
+slideButton1.addEventListener('click', SlideToggle1)
+
+let container2 = $('#container2')
+let slideButton2 = document.getElementById('slide-button2')
+function SlideToggle2() {
+    container2.slideToggle()
+}
+slideButton2.addEventListener('click', SlideToggle2)
+
+let container3 = $('#container3')
+let slideButton3 = document.getElementById('slide-button3')
+function SlideToggle3() {
+    container3.slideToggle()
+}
+slideButton3.addEventListener('click', SlideToggle3)
+
+let container4 = $('#container4')
+let slideButton4 = document.getElementById('slide-button4')
+function SlideToggle4() {
+    container4.slideToggle()
+}
+slideButton4.addEventListener('click', SlideToggle4)
+
+let container5 = $('#container5')
+let slideButton5 = document.getElementById('slide-button5')
+function SlideToggle5() {
+    container5.slideToggle()
+}
+slideButton5.addEventListener('click', SlideToggle5)
+
+let container6 = $('#container6')
+let slideButton6 = document.getElementById('slide-button6')
+function SlideToggle6() {
+    container6.slideToggle()
+}
+slideButton6.addEventListener('click', SlideToggle6)
+
+let container7 = $('#container7')
+let slideButton7 = document.getElementById('slide-button7')
+function SlideToggle7() {
+    container7.slideToggle()
+}
+slideButton7.addEventListener('click', SlideToggle7)
+
+let container8 = $('#container8')
+let slideButton8 = document.getElementById('slide-button8')
+function SlideToggle8() {
+    container8.slideToggle()
+}
+slideButton8.addEventListener('click', SlideToggle8)
+
+let container9 = $('#container9')
+let slideButton9 = document.getElementById('slide-button9')
+function SlideToggle9() {
+    container9.slideToggle()
+}
+slideButton9.addEventListener('click', SlideToggle9)
+</script>
+
+</body>
+</html>
+{{Template:CCU_Taiwan/footer}}

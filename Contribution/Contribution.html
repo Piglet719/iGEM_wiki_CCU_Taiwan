@@ -1,0 +1,124 @@
+{{Template:CCU_Taiwan/bootstrap_min_css}}
+{{Template:CCU_Taiwan/modify_css}}
+{{Template:CCU_Taiwan/header}}
+{{Template:CCU_Taiwan/contribution_css}}
+
+<html>
+<head>
+
+<script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:CCU_Taiwan/JS/bootstrap&action=raw&ctype=text/javascript"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<!--Contribution-->
+<body>
+<div id="fullpage" class="infos bg_img_1">
+    <h1 class="wordcenter shadow">Contribution</h1>
+</div>
+<nav class="section-nav">
+    <ul>
+        <li><a href="#ins">Inspiration</a></li>
+        <li><a href="#lae">Linear Array Epitope (LAE)</a></li>
+        <li><a href="#exp">Experiment Tips</a></li>
+        <li><a href="#add">Additional Usage</a></li>
+        <br>
+        <li id="abr"><b>Abbreviations</b></li>
+        <li id="abr">LAE: linear array epitope</li>
+        <li id="abr">TRS: tandem-repeated sequence</li>
+        <li id="abr">TR-PCR: template-repeated PCR</li>
+        <li id="abr">AD-PCR: adaptor PCR</li>
+    </ul>
+    <svg class="section-nav-marker" width="200" height="200"></svg>
+</nav>
+
+<div class="contents s12 m6 l4" id="text">
+    <article>
+        <section id="ins">
+            <h2>Inspiration</h2>
+            <p>During this year, we found an interesting method, linear array epitope (LAE), to produce a tandem-repeated sequence (TRS). Using the conventional method, it is hard to produce a repeat sequence on a commercial scale. <b>We hope LAE can help future iGEMers when they need it!</b></p>
+        </section>
+        <br>
+        <section id="lae">
+            <h2>Linear Array Epitope (LAE)</h2>
+            <p>LAE is a technique that first produces the TRSs. Later in the procedure, those TRSs would be expressed as a long-chain peptide which can be cleaved by an enzyme, resulting in many identical peptides.</p>
+            <br>
+            <p>LAE involves three steps: the design of DNA oligo primers, template-repeated PCR (TR-PCR) and adaptor PCR (AD-PCR). The procedures are shown in Figures 1-3.</p>
+            <br>
+            <p>We design the primers with the desired sequence of peptides. In the primer design (Figure 1), TR-PCR primers would be partially complementary to each other and AD-PCR would have the restriction sites we needed.</p>
+            <br>
+            <div id="fig">
+                <img width="80%" src="https://2020.igem.org/wiki/images/0/06/T--CCU_Taiwan--Cotribution_1.gif">
+                <p>Figure 1. The design DNA oligo primers.</p>
+            </div>
+            <br>
+            <p>In TR-PCR (Figure 2), those primers act as both primer and template and they are partially complementary shown in red. The TRSs would be produced during the PCR cycling.</p>
+            <br>
+            <div id="fig">
+                <img width="45%" src="https://2020.igem.org/wiki/images/1/1d/T--CCU_Taiwan--Cotribution_2.gif">
+                <p>Figure 2. The principle of TR-PCR.</p>
+            </div>
+            <br>
+            <p>In AD-PCR (Figure 3), the restriction sites would be introduced into the TR-products by adding the AD-PCR primers and PCR cycling.</p>
+            <br>
+            <div id="fig">
+                <img width="80%" src="https://2020.igem.org/wiki/images/b/be/T--CCU_Taiwan--Cotribution_3.gif">
+                <p>Figure 3. The principle of AD-PCR.</p>
+            </div>
+        </section>
+        <br>
+        <section id="exp">
+            <h2>Experiment Tips</h2>
+            <ol>
+                <li>TR-PCR is sensitive to primer concentration. To optimize the results, you should try several concentrations to obtain the most repeating sequences.</li>
+                <li>During AD-PCR, the gel will show many bands representing the products with different sizes. You can choose the specific product to meet the requirements of the experiment.</li>
+            </ol>
+            <br>
+        </section>
+        <br>
+        <section id="add">
+            <h2>Additional Usage</h2>
+            <p>Originally, LAE was a method for preparation of an immunogen containing multiple copies of a defined peptide in a linear alignment. This method was designed to overcome the poor immune responses induced by traditional immunogenic peptide/protein antigens. The tandem-repeated epitopes are able to efficiently induce a strong immune response.</p>
+            <br>
+            <p>In summary, we hope that LAE can be useful to future iGEM teams.</p>
+        </section>
+        <br>
+        <hr>
+        <section id="ref" style="word-break:break-all; word-wrap:break-all;">
+            <h4>Reference</h4>
+            <p>Peng-Yeh Lai, Chia-Tse Hsu, Shao-Hung Wang, Jin-Ching Lee, Min-Jen Tseng, Jaulang Hwang, Wen-Tsai Ji, Hau-Ren Chen. Production of a neutralizing antibody against envelope protein of dengue virus type 2 using the linear array epitope technique. Journal of General Virology (2014), 95, 2155–2165</p>
+        </section>
+    </article>
+</div>
+
+<!--gotop-->
+<div id="gotop"><a href="#"></a></div>
+<script>
+$(function(){
+    $('#gotop').click(function(){ 
+        $('html,body').animate({scrollTop:0}, "fast");
+    });
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 300 ){
+            $('#gotop').fadeIn(100);
+        } else {
+            $('#gotop').stop().fadeOut(100);
+        }
+    }).scroll();
+});
+
+$(function(){
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 600 ){
+            $('.section-nav').fadeIn("fast");
+        } else {
+            $('.section-nav').fadeOut("fast");
+        }
+    }).scroll();
+});
+
+</script>
+
+</body>
+</html>
+{{Template:CCU_Taiwan/footer}}

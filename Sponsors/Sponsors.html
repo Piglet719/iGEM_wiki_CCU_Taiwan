@@ -1,0 +1,101 @@
+{{Template:CCU_Taiwan/bootstrap_min_css}}
+{{Template:CCU_Taiwan/modify_css}}
+{{Template:CCU_Taiwan/header}}
+{{Template:CCU_Taiwan/sponsors_css}}
+
+<html>
+<head>
+
+<script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:CCU_Taiwan/JS/bootstrap&action=raw&ctype=text/javascript"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<!--Sponsors-->
+<body>
+<div id="fullpage" class="infos bg_img_1">
+    <h1 class="wordcenter shadow">Sponsors</h1>
+</div>
+<nav class="section-nav">
+    <ul>
+        <li><a href="#pri">Primary Sponsors</a></li>
+        <li><a href="#sec">Secondary Sponsors</a></li>
+        <li><a href="#ind">Individual Sponsors</a></li>
+        <li><a href="#igem">iGEM Sponsors</a></li>
+    </ul>
+    <svg class="section-nav-marker" width="200" height="200"></svg>
+</nav>
+
+<div class="contents s12 m6 l4" id="text">
+    <article>
+        <section id="pri">
+            <h2>Primary Sponsors</h2>
+            <a href="https://www.ccu.edu.tw/index.php?m=false" target="_blank">
+                <img class="logo-img" src="https://2020.igem.org/wiki/images/f/f9/T--CCU_Taiwan--Sponsors_ccu.png">
+            </a>
+            <img class="logo-img" src="https://2020.igem.org/wiki/images/f/f9/T--CCU_Taiwan--Sponsors_ccu1.png">
+        </section>
+        <br>
+        <section id="sec">
+            <h2>Secondary Sponsors</h2>
+            <img class="logo-img" src="https://2020.igem.org/wiki/images/7/7e/T--CCU_Taiwan--Sponsors_ccu2.png">
+            <img class="logo-img" src="https://2020.igem.org/wiki/images/d/d3/T--CCU_Taiwan--Sponsors_ccu3.png">
+            <a href="https://www.neb-online.fr/en/" target="_blank">
+                <img class="logo-img" src="https://2020.igem.org/wiki/images/6/65/T--CCU_Taiwan--Sponsors_biolabs.png">
+            </a>
+        </section>
+        <br>
+        <section id="ind">
+            <h2>Individual Sponsors</h2>
+            <p>馬可牙醫診所&#9;歡樂派童裝&#9;金豐成珠寶銀樓&#9;艾莉沙龍&#9;翠妹妹服飾坊</p>
+        </section>
+        <br>
+        <section id="igem">
+            <h2>iGEM Sponsors</h2>
+            <a href="https://sg.idtdna.com/pages" target="_blank">
+                <img class="logo-img" src="https://2020.igem.org/wiki/images/0/08/T--CCU_Taiwan--Sponsors_idt.png">
+            </a>
+            <a href="https://www.snapgene.com/" target="_blank">
+                <img class="logo-img" src="https://2020.igem.org/wiki/images/e/ef/T--CCU_Taiwan--Sponsors_snapgene.png">
+            </a>
+            <a href="https://www.benchling.com/" target="_blank">
+                <img class="logo-img" src="https://2020.igem.org/wiki/images/a/a2/T--CCU_Taiwan--Sponsors_benchling.png">
+            </a>
+            <a href="https://www.mathworks.com/" target="_blank">
+                <img class="logo-img" src="https://2020.igem.org/wiki/images/2/28/T--CCU_Taiwan--Sponsors_mathworks.png">
+            </a>
+        </section>
+        <br>
+    </article>
+</div>
+
+<!--gotop-->
+<div id="gotop"><a href="#"></a></div>
+<script>
+$(function(){
+    $('#gotop').click(function(){ 
+        $('html,body').animate({scrollTop:0}, "fast");
+    });
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 300 ){
+            $('#gotop').fadeIn(100);
+        } else {
+            $('#gotop').stop().fadeOut(100);
+        }
+    }).scroll();
+});
+
+$(function(){
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 600 ){
+            $('.section-nav').fadeIn("fast");
+        } else {
+            $('.section-nav').fadeOut("fast");
+        }
+    }).scroll();
+});
+
+</script>
+</body>
+</html>
+{{Template:CCU_Taiwan/footer}}

@@ -1,0 +1,91 @@
+{{Template:CCU_Taiwan/bootstrap_min_css}}
+{{Template:CCU_Taiwan/modify_css}}
+{{Template:CCU_Taiwan/header}}
+{{Template:CCU_Taiwan/future_css}}
+
+<html>
+<head>
+
+<script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:CCU_Taiwan/JS/bootstrap&action=raw&ctype=text/javascript"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<!--Prospects-->
+<body>
+<div id="fullpage" class="infos bg_img_1">
+    <h1 class="wordcenter shadow">Prospects</h1>
+</div>
+<nav class="section-nav">
+    <ul>
+        <li><a href="#pro">Prospects</a></li>
+        <li><a href="#env">Environmental Detection</a></li>
+        <li><a href="#tre">Treatment</a></li>
+        <br>
+        <li id="abr"><b>Abbreviations</b></li>
+        <li id="abr">E protein: dengue virus envelope protein</li>
+        <li id="abr">PTRS: peptide of tandem-repeated sequence</li>
+        <li id="abr">LAE: linear array epitope</li>
+        <li id="abr">CLEC5A: C-type lectin domain, family 5, member A</li>
+    </ul>
+    <svg class="section-nav-marker" width="200" height="200"></svg>
+</nav>
+
+<div class="contents s12 m6 l4" id="text">
+    <article>
+        <section id="pro">
+            <h2>Prospects</h2>
+            <p>We believe our the peptide of PTRSs, which are produced with LAE technique, are able to bind to the E protein; meanwhile, PTRSs have a huge potential on many applications. We understand that there are still many works required in order to accomplish these ideas. Here, we list the possible future directions for our project, which will be divided into two parts: environmental detection and treatment.</p>
+        </section>
+        <br>
+        <section id="env">
+            <h2>Environmental Detection</h2>
+            <p>We envision that our kit will be expanded to detect all four serotypes of the dengue virus. Furthermore, it will also be able to identify the risk of the environments by detecting the population of mosquito vectors carrying dengue virus. We will also need to establish a score system based on our detection kit, so that we can alert the public the threat of dengue virus.</p>
+            <br>
+            <div id="imginfo">
+                <img width="80%" src="https://2020.igem.org/wiki/images/b/bb/T--CCU_Taiwan--Future_1.gif">
+            </div>
+        </section>
+        <br>
+        <section id="tre">
+            <h2>Treatment</h2>
+            <p>Ultimately, we also hope our PTRSs could be involved in the treatment procedure. Ideally, PTRSs are capable to bind to the E protein of the dengue virus. Therefore, they could block the interaction between CLEC5A on a macrophage and the E protein on the virions in the blood. As the result, we could lower the possibility of severe dengue fever.</p>
+            <br>
+            <div id="imginfo">
+                <img width="80%" src="https://2020.igem.org/wiki/images/8/84/T--CCU_Taiwan--Future_2.gif">
+            </div>
+        </section>
+    </article>
+</div>
+
+<!--gotop-->
+<div id="gotop"><a href="#"></a></div>
+<script>
+$(function(){
+    $('#gotop').click(function(){ 
+        $('html,body').animate({scrollTop:0}, "fast");
+    });
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 300 ){
+            $('#gotop').fadeIn(100);
+        } else {
+            $('#gotop').stop().fadeOut(100);
+        }
+    }).scroll();
+});
+
+$(function(){
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 600 ){
+            $('.section-nav').fadeIn("fast");
+        } else {
+            $('.section-nav').fadeOut("fast");
+        }
+    }).scroll();
+});
+
+</script>
+
+</body>
+</html>
+{{Template:CCU_Taiwan/footer}}

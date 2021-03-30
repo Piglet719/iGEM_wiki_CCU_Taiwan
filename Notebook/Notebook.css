@@ -1,0 +1,463 @@
+<html>
+<style>
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow: auto;
+    height: 100%;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+#fullpage {
+    height: 100vh;
+}
+
+.infos {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg_img_1{
+    background-image: url(https://2020.igem.org/wiki/images/b/bb/T--CCU_Taiwan--logo_Notebook.png);
+    padding-top: 68px;
+}
+
+.wordcenter{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    font-size: 8rem;
+    filter: none;
+}
+
+.shadow{
+    text-shadow: 1px 1px 7px rgba(0, 0, 0, .9);
+    box-shadow: 0 0 0 rgba(0,0,0,0)!important;
+}
+
+article,
+section {
+    display: block;
+}
+
+h1 {
+    font-size: 2em;
+    color: #fff;
+    z-index: 100;
+}
+
+a {
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+a:active,
+a:hover {
+    outline-width: 0;
+}
+
+@media (max-width: 850px) {
+    .wordcenter {
+        font-size: 7rem;
+    }
+}
+
+@media (max-width: 750px) {
+    .wordcenter {
+        font-size: 6rem;
+    }
+}
+
+@media (max-width: 650px) {
+    .wordcenter {
+        font-size: 5rem;
+    }
+}
+
+.contents {
+    padding: 2em 10%;
+    text-align: center;
+}
+
+
+a:hover {
+    text-decoration: none;
+}
+
+#title_1 {
+    width: 100%;
+}
+
+#box {
+    display: inline-flex;
+    width: 33.3%;
+    padding: 1rem;
+    text-align: center;
+}
+
+.style_hr {
+    background-color: rgba(155,30,30);
+    width: 100%;
+    text-align: center;
+    border-width: 3px;
+    margin-top: 0;
+    margin-bottom: .5em;
+}
+
+ol {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.mw-content-ltr ol, .mw-content-rtl .mw-content-ltr ol {
+    margin: 0 0 0 1.5em;
+}
+
+h4 {
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+    background-color: #efefef;
+    border-radius: .3rem;
+    display: inline-flex;
+}
+
+#slide-button1 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+    color: rgba(155,30,30);
+}
+
+#slide-button1:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button2 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+}
+
+#slide-button2:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button3 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+    color: rgba(155,30,30);
+}
+
+#slide-button3:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button4 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+}
+
+#slide-button4:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button5 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+    color: rgba(155,30,30);
+}
+
+#slide-button5:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button6 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+}
+
+#slide-button6:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button7 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+    color: rgba(155,30,30);
+}
+
+#slide-button7:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button8 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+}
+
+#slide-button8:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button9 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+    color: rgba(155,30,30);
+}
+
+#slide-button9:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button10 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+}
+
+#slide-button10:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button11 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+    color: rgba(155,30,30);
+}
+
+#slide-button11:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button12 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+}
+
+#slide-button12:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button13 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+    color: rgba(155,30,30);
+}
+
+#slide-button13:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button14 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+}
+
+#slide-button14:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button15 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+    color: rgba(155,30,30);
+}
+
+#slide-button15:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button16 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+}
+
+#slide-button16:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button17 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+    color: rgba(155,30,30);
+}
+
+#slide-button17:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button18 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+}
+
+#slide-button18:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button19 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+    color: rgba(155,30,30);
+}
+
+#slide-button19:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button20 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+}
+
+#slide-button20:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button21 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+    color: rgba(155,30,30);
+}
+
+#slide-button21:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button22 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+}
+
+#slide-button22:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button23 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+    color: rgba(155,30,30);
+}
+
+#slide-button23:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button24 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+}
+
+#slide-button24:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button25 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+    color: rgba(155,30,30);
+}
+
+#slide-button25:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button26 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+}
+
+#slide-button26:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button27 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+    color: rgba(155,30,30);
+}
+
+#slide-button27:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#slide-button28 {
+    font-size: 2rem;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em;
+}
+
+#slide-button28:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+</style>
+</html>

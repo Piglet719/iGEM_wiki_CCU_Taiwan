@@ -1,0 +1,173 @@
+{{Template:CCU_Taiwan/bootstrap_min_css}}
+{{Template:CCU_Taiwan/modify_css}}
+{{Template:CCU_Taiwan/header}}
+{{Template:CCU_Taiwan/improvement_css}}
+
+<html>
+<head>
+
+<script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:CCU_Taiwan/JS/bootstrap&action=raw&ctype=text/javascript"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<!--Improvement-->
+<body>
+<div id="fullpage" class="infos bg_img_1">
+    <h1 class="wordcenter shadow">Improvements</h1>
+</div>
+<nav class="section-nav">
+    <ul>
+        <li><a href="#lae">Linear Array Epitope</a></li>
+        <li><a href="#epro">Envelope Protein</a></li>
+        <li><a href="#cle">CLEC5A</a></li>
+    </ul>
+    <svg class="section-nav-marker" width="200" height="200"></svg>
+</nav>
+
+<div class="contents s12 m6 l4" id="text">
+    <article>
+        <section id="lae">
+            <h2>Linear Array Epitope</h2>
+            <p>Procedures involving the LAE experiments and the improvement of TR-PCR will be discussed in this section. The position of TR-PCR in LAE procedure is shown in Figure 1.</p>
+            <br>
+            <div id="imginfo">
+                <img width="100%" src="https://2020.igem.org/wiki/images/9/9a/T--CCU_Taiwan--Improvement8.png">
+                <p>Figure 1. Order of LAE procedure.</p>
+            </div>
+            <br>
+            <h3>TR-PCR</h3>
+            <p>We first used Taq DNA polymerase in TR-PCR; however, the bands shown in electrophoresis (Figure 2(a)) were too weak, suggesting Taq is inefficient in our system. TRS-110 ladders became clear when we used Pfu DNA polymerase (Figure 2(b)). Similar results were obtained for TRS-151. We also adjusted the concentration of primer to maximize the number of repeats. Typically, the lower the concentration of primer the higher the number of repeats we can obtain. We found the optimal concentration of primer to be 0.2 μM for TRS-151*7 and 0.08 μM for TRS-110*3.</p>
+            <br>
+            <div id="imginfo">
+                <div id="imginfo1">
+                    <img width="100%" src="https://2020.igem.org/wiki/images/7/77/T--CCU_Taiwan--Improvement11a.png">
+                    <p>(a)</p>
+                </div>
+                <div id="imginfo1">
+                    <img width="100%" src="https://2020.igem.org/wiki/images/c/c5/T--CCU_Taiwan--Improvement11b.png">
+                    <p>(b)</p>
+                </div>
+                <p>Figure 2. The Results of TR-PCR for TRS-110, with (a) taq and (b) Pfu DNA polymerases. The ladder pattern shows that the lower the primer concentration the higher the number of repeats. Values above each lane in μM, M = DNA marker.</p>
+            </div>
+            <br>
+            <p>We noticed from sequencing that some TR-PCR products had no restriction enzyme sites. Therefore, the following procedures will be split into two parts (Figure 3, 4), with and without restriction enzyme sites. We solved different issues with these two procedures.</p>
+            <br>
+            <div id="imginfo">
+                <img width="100%" src="https://2020.igem.org/wiki/images/c/cf/T--CCU_Taiwan--Improvement9.png">
+                <P>Figure 3. For TRS with restriction enzyme sites, the improvement of plasmid extraction and ligation will be discussed.</p>
+            </div>
+            <br>
+            <h3>Plasmid Extraction</h3>
+            <p>At the beginning, we extracted the plasmids from 3 mL of bacteria culture and separated them using a spin column with 52 μL of elution buffer. The final concentration of plasmid was roughly 200 ng/μL, but this concentration was too low for ligation. So we extracted the plasmids using a higher volume of bacteria culture (6 mL) and less elution buffer (30 μL), which resulted in a higher plasmid concentration (300-400 ng/uL).</p>
+            <br>
+            <h3>Ligation</h3>
+            <p>The suggested procedure for ligation uses 4 μL of T4 ligase, 4 μL of T4 ligase buffer, 1 μL of vector (pET-29(b)), and 1 μL of insert gene. However, after digestion, the concentration of the insert gene was too low for ligation. We changed the amounts of these four ingredients to 1 μL of T4 ligase, 1 μL of T4 ligase buffer, 1 μL of vector (pET-29(b)), and 7 μL of insert gene. We can check this with transformation to confirm the ligation was improved.</p>
+            <br>
+            <div id="imginfo">
+                <img width="100%" src="https://2020.igem.org/wiki/images/4/44/T--CCU_Taiwan--Improvement10.png">
+                <P>Figure 4. For TRS without the restriction enzyme sites, the improvement of AD-PCR will be discussed.</p>
+            </div>
+            <br>
+            <h3>AD-PCR</h3>
+            <p>For plasmids lacking restriction enzyme sites, we used AD-PCR to add sites to the plasmids. The temperature in AD-PCR was initially set to 55 °C, but this failed to add the restriction enzyme sites. Then we decreased the temperature in AD-PCR to 45 °C, and the results showed correct digestion (Figure 5).</p>
+            <br>
+            <div id="imginfo">
+                <img id="imginfo2" src="https://2020.igem.org/wiki/images/1/1c/T--CCU_Taiwan--Improvement13.png">
+                <p>Figure 5. The results of a TRS (100 bp) digestion, which has restriction enzyme sites.</p>
+            </div>
+        </section>
+        <br>
+        <section id="epro">
+            <h2>Envelope Protein (E protein)</h2>
+            <p>The position of PCR in E protein procedure is shown in Figure 6.</p>
+            <br>
+            <div id="imginfo">
+                <img id="imginfo2" src="https://2020.igem.org/wiki/images/5/57/T--CCU_Taiwan--Improvement1.png">
+                <p>Figure 6. Order of E protein procedure.</p>
+            </div>
+            <br>
+            <p>We found no colonies of DH5α after the transformation into DH5α and suspected that there might be issues during PCR. One of the reasons could be that an adenine would be added to the 3’ on the blunt end of the E protein sequence during PCR, which could have hindered our polymerase, Taq. Therefore, we replaced Taq with Pfu and obtained colonies of DH5α. However, strong bands were only found at 300 bp in the colony PCR (Figure 7), suggesting that there are still problems during ligation. Nevertheless, we kept working on it. Finally, we transformed pET-29a(+)_E protein into DH5α successfully (Figure 8).</p>
+            <br>
+            <div id="imginfo">
+                <img id="imginfo2" src="https://2020.igem.org/wiki/images/8/89/T--CCU_Taiwan--Improvement2.jpg">
+                <p>Figure 7. Colony PCR of pET-29a(+)_E protein, which only has a size of about 300 bp rather than 500 bp. M = DNA marker. P = positive control, pET-29b(+)_CLEC5A.</p>
+            </div>
+            <br>
+            <div id="imginfo">
+                <img id="imginfo2" src="https://2020.igem.org/wiki/images/c/c9/T--CCU_Taiwan--Results8.jpg">
+                <p>Figure 8. Colony PCR of pET-29a(+)_E protein, which has a size of about 2,000 bp, containing E protein with two HA tags, and T7 promoter and terminator. M = DNA marker. </p>
+            </div>
+        </section>
+        <br>
+        <section id="cle">
+            <h2>CLEC5A</h2>
+            <p>The position of digestion, colony PCR, and expression on a large scale in E protein procedure is shown in Figure 9.</p>
+            <br>
+            <div id="imginfo">
+                <img width="100%" src="https://2020.igem.org/wiki/images/b/b4/T--CCU_Taiwan--Improvement3.png">
+                <p>Figure 9. Order of CLEC5A procedure.</p>
+            </div>
+            <br>
+            <h3>Colony PCR</h3>
+            <p>We used colony PCR to confirm whether the transformation of pET-29b(+)_CLEC5A into DH5α was successful. However, the results of colony PCR (Figure 10) shows that there are no bands between 750 and 1,000 bp. We further verified whether pET-29b(+)_CLEC5A could be digested as expected.</p>
+            <br>
+            <div id="imginfo">
+                <img id="imginfo2" src="https://2020.igem.org/wiki/images/5/5e/T--CCU_Taiwan--Improvement4.jpg">
+                <p>Figure 10. Colony PCR of pET-29b(+)_CLEC5A with T7 promoter and terminator, Myc tag, and HA tag using the original primers. The expected strong bands between 750 and 1,000 bp are missing. M = DNA marker.</p>
+            </div>
+            <br>
+            <p>Figure 11 shows that digestions of pET-29b(+)_CLEC5A with NcoI and HindIII work well. Therefore, we designed new primers to improve the transformation. The colony PCR suggests the transformation can be done with these new primers (Figure 12), since the sequence of pET-29b(+)_CLEC5A containing the Myc tag, HA tag, and T7 promoter and terminator has a size of about 900 bp.</p>
+            <br>
+            <div id="imginfo">
+                <img id="imginfo2" src="https://2020.igem.org/wiki/images/6/64/T--CCU_Taiwan--Improvement5.jpg">
+                <p>Figure 11. Digestion of pET-29b(+)_CLEC5A using NcoI and HindIII show strong bands between 500 and 750 bp, suggesting that the digestions were successful. M = DNA marker.</p>
+            </div>
+            <br>
+            <div id="imginfo">
+                <img id="imginfo2" src="https://2020.igem.org/wiki/images/c/c1/T--CCU_Taiwan--Results11.jpg">
+                <p>Figure 12. Colony PCR of pET-29b(+)_CLEC5A with the new primer shows strong bands between 750 and 1,000 bp, corresponding to the sequence size of pET-29b(+)_CLEC5A containing a Myc tag and T7 promoter and terminator.</p>
+            </div>
+            <br>
+            <h3>Expression on a Large Scale</h3>
+            <p>We have confirmed the expression of CLEC5A with a small-scale culture using <a href="https://2020.igem.org/Team:CCU_Taiwan/Results" target="_blank">Western blot</a>, so we tried large-scale expression. However, since CLEC5A was only found in the pellet, we tried changing the induction time so CLEC5A would be expressed in the supernatant. However, Figure 13 shows that CLEC5A was still always found only in the pellets. We are currently trying to find a condition in which CLEC5A would be expressed in the supernatant.</p>
+            <br>
+            <div id="imginfo">
+                <img id="imginfo2" src="https://2020.igem.org/wiki/images/7/79/T--CCU_Taiwan--Results14.jpg">
+                <p>Figure 13. The SDS-PAGE of CLEC5A with a large-scale expression. The protein was induced for 30 minutes, 1 hour, 2 hours, 3 hours, or 4 hours. However, the results shows that CLEC5A was always expressed in the pellet under these conditions. M = protein marker. Sup. = supernatant.</p>
+            </div>
+        </section>
+    </article>
+</div>
+
+<!--gotop-->
+<div id="gotop"><a href="#"></a></div>
+<script>
+$(function(){
+    $('#gotop').click(function(){ 
+        $('html,body').animate({scrollTop:0}, "fast");
+    });
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 300 ){
+            $('#gotop').fadeIn(100);
+        } else {
+            $('#gotop').stop().fadeOut(100);
+        }
+    }).scroll();
+});
+
+$(function(){
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 600 ){
+            $('.section-nav').fadeIn("fast");
+        } else {
+            $('.section-nav').fadeOut("fast");
+        }
+    }).scroll();
+});
+
+</script>
+
+</body>
+</html>
+{{Template:CCU_Taiwan/footer}}

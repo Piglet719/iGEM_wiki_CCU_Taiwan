@@ -1,0 +1,162 @@
+{{Template:CCU_Taiwan/bootstrap_min_css}}
+{{Template:CCU_Taiwan/modify_css}}
+{{Template:CCU_Taiwan/header}}
+{{Template:CCU_Taiwan/engineering_css}}
+
+<html>
+<head>
+
+<script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:CCU_Taiwan/JS/bootstrap&action=raw&ctype=text/javascript"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<!--Engineering-->
+<body>
+<div id="fullpage" class="infos bg_img_1">
+    <h1 class="wordcenter shadow">Engineering</h1>
+</div>
+<nav class="section-nav">
+    <ul>
+        <li><a href="#ins">Inspiration</a></li>
+        <li><a href="#high">Highlights</a></li>
+        <li><a href="#des">The Core Design</a></li>
+        <li><a href="#kit">The Lateral-Flow Based Kit</a></li>
+        <br>
+        <li id="abr"><b>Abbreviations</b></li>
+        <li id="abr">CLEC5A: C-type lectin domain, family 5, member A</li>
+        <li id="abr">E protein: dengue virus envelope protein</li>
+        <li id="abr">TRS: tandem-repeated sequence</li>
+        <li id="abr">PTRS: peptide of tandem-repeated sequence</li>
+        <li id="abr">TR-PCR: template-repeated PCR</li>
+    </ul>
+    <svg class="section-nav-marker" width="200" height="200"></svg>
+</nav>
+
+<div class="contents s12 m6 l4" id="text">
+    <article>
+        <section id="ins">
+            <h2>Inspiration</h2>
+            <p>We noticed that dengue fever is a severe disease, which could affect almost half the world. We learned through literature and reports that dengue hemorrhagic fever and dengue shock syndrome have high mortality rates. These symptoms result from the interaction between C-type lectin domain, family 5, member A (CLEC5A) on macrophages and the envelope protein 
+ (E proteins) of dengue virions.</p>
+            <br>
+            <p>Imagine if there are enough proteins or antibodies to “disturb” the CLEC5A – dengue interaction, just like “smoke grenades” in our body? That would be a fantastic treatment option. It would take a long time to achieve, though.</p>
+            <br>
+            <p>Instead, we thought about using peptides as “peptides cloud” to detect virions outside the body since they are small and can be produced much faster than antibodies. The goal is to implement this mechanism on a detection kit. We summarize the accomplishments to achieve our idea.</p>
+        </section>
+        <br>
+        <section id="high">
+            <h2>Engineering Success</h2>
+            <ol>
+                <li><b>We obtained the TRSs using LAE.</b></li>
+                <li><b>We expressed E protein and CLEC5A.</b></li>
+                <li><b>We conjugated primary amines to the glass fiber membranes and AuNPs.</b></li>
+            </ol>
+            <br>
+        </section>
+        <br>
+        <section id="des">
+            <h2>The Core Design</h2>
+            <p>We designed two parts, which we called TRS-1 and TRS-2, using the binding site of CLEC5A as a reference. We use TR-PCR as a method of producing these the PTRSs, which takes primers as PCR templates and produces a long chain of repeating sequences of peptide DNA. There is a problem that the primer concentration is highly sensitive to the TRS chain length (repeat times). We found the lower the concentration the longer the chain that will be produced.</p>
+            <br>
+            <div id="imginfo">
+                <img width="80%" src="https://2020.igem.org/wiki/images/c/cb/T--CCU_Taiwan--Engineering1.png">
+                <p>Tandem-repeated sequence (TRS)</p>
+            </div>
+            <br>
+            <p>In the next stage of the experiment, we use pET-29b(+) as a vector of TRS-1 and TRS-2 to transform <i>E.coli</i> DH5α to clone more TRS. After that, we then transform the chosen TRS into <i>E.coli</i> BL21 (DE3) to express PTRS. <i>E.coli</i> DH5α has an property of high transformation efficiency, and <i>E.coli</i> BL21 (DE3) can express protein or peptide effectively. So, we choose these two different strains to do different parts.</p>
+            <br>
+            <p>To ensure that our PTRS can bind to E protein, we design the experiment to check it. Therefore, we also do the experiment to express the E protein and CLEC5A extracellular domain as the positive control in this experiment. We ended up expressing CLEC5A extracellular domain and E protein.</p>
+            <br>
+            <div id="imginfo">
+                <div id="imginfo1">
+                    <img width="65%" src="https://2020.igem.org/wiki/images/9/9b/T--CCU_Taiwan--Engineering2.png">
+                    <p>C-type lectin domain, family 5, member A (CLEC5A)</p>
+                </div>
+                <div id="imginfo1">
+                    <img width="100%" src="https://2020.igem.org/wiki/images/f/fc/T--CCU_Taiwan--Engineering3.png">
+                    <P>Dengue virus envelope protein (E protein)</p>
+                </div>
+            </div>
+            <br>
+            <p>In the initial design, we planned to add an arginine sequence to the end of the peptide sequence, which could be cleaved by trypsin at the arginine C-terminal of the peptide. Unfortunately, based on a calculation of the electrostatic force of gold nanoparticles, we decided we should use a longer PTRS instead of the PTRS monomer because there is an electrostatic force between the gold nanoparticles, so if one gold nanoparticle with TRS interacts with an E protein on the virion, the other gold nanoparticles might find it difficult to interact with the E protein. Thus, we designed the TR-PCR primer without an arginine sequence to produce the PTRS and chose the size that is most likely to interact with dengue E proteins, according to Rosetta simulations.</p>
+        </section>
+        <br>
+        <section id="kit">
+            <h2>The Lateral-Flow Based Kit</h2>
+            <p>Our rapid diagnostic test kit, <b>DENDETX</b>, is referred to the pregnancy test. DENDETX consists of the sample pad, conjugate pad, test line, control line, and absorbent pad. The sample pad and the absorbent pad are made of cellulose fiber membranes, and the conjugate pad, test line, and control line are made of glass fiber membranes.</p>
+            <br>
+            <p>The difference between DENDETX and the pregnancy test kit is that we replaced the antibodies by PTRSs. Conventionally, the substrate for the test and control lines is nitrocellulose, it forms the dipole-dipole interaction with the antibodies. In order to have a strong conjugation of PTRSs to the test and control lines, we used glass fiber membranes instead of nitrocellulose membranes. We can chemically modify the glass membranes, which forms the strong covalent bonds with PTRSs.</p>
+            <br>
+            <p>For the modification of the glass fiber membranes, we first utilized the oxygen plasma treatment to remove the impurities and contaminants from the surfaces of membranes. The treatment generates silanol groups (−SiOH) fully covers the surface of the glass fiber membranes. In the beginning, we planned to use APTES to modify the glass fiber membranes, which have been processed with oxygen plasma treatment, so that the silanols on the surface of the glass fiber membranes will be replaced by primary amines. Then, we can use the EDC/NHS approach to conjugate the carboxylic groups of CM-Dextran to the membrane surface with amines. Finally, the PTRSs could be conjugated to the available carboxylic groups of CM-Dextran again use the EDC/NHS approach again.</p>
+            <br>
+            <p>However, we realized the hydroxyls CM-Dextran would have non-specific interactions to the compositions in the liquid sample, which would mislead the results. In order to reduce the uncertainty of the experiment, we decided to use CES to replace CM-Dextran. To the best of our knowledge, there is no record of modifying glass fiber membranes using CES. We have successfully conjugated CES to the glass fiber membrane and PTRSs to CES using the EDC/NHS approach.</p>
+            <br>
+            <div id="imginfo">
+                <img width="50%" src="https://2020.igem.org/wiki/images/e/e4/T--CCU_Taiwan--Engineering4.png">
+            </div>
+            <br>
+            <p><b>Abbreviations</b>: APTES: (3-aminopropyl)tiethoxysilane; EDC: 1-ethyl-3-(3-dimethylaminopropyl) carbodiimide; NHS: N-hydroxysuccinimide; CM-Dextran: carboxymethyl-dextran; CES: carboxyethylsilanetriol</p>
+        </section>
+        <br>
+        <hr>
+        <section id="ref" style="word-break:break-all; word-wrap:break-all;">
+            <h4>References</h4>
+            <p>Tung YT, Wu MF, Wang GJ, Hsieh SL. Nanostructured electrochemical biosensor for th0065 detection of the weak binding between the dengue virus and the CLEC5A receptor. Nanomedicine. 2014 Aug;10(6):1335-41. doi: 10.1016/j.nano.2014.03.009. Epub 2014 Mar 24. PMID: 24674971.<br>
+               Alen, M. M. F., & Schols, D. (2012). Dengue Virus Entry as Target for Antiviral Therapy. Journal of Tropical Medicine, 2012, 1–13. doi:10.1155/2012/628475<br>
+               Fahimi, H., Mohammadipour, M., Haddad Kashani, H. et al. Dengue viruses and promising envelope protein domain III-based vaccines. Appl Microbiol Biotechnol 102, 2977–2996 (2018). https://doi.org/10.1007/s00253-018-8822-y<br>
+               Mondotte JA, Lozach PY, Amara A, Gamarnik AV. Essential role of dengue virus envelope protein N glycosylation at asparagine-67 during viral propagation. J Virol. 2007 Jul;81(13):7136-48. doi: 10.1128/JVI.00116-07. Epub 2007 Apr 25. PMID: 17459925; PMCID: PMC1933273.<br>
+               Sprokholt, J. K. (2019). Dengue virus infection of dendritic cells: Sensing viral replication during inflammation and immunity.<br>
+               Sung PS., Chang WC., Hsieh SL. (2020) CLEC5A: A Promiscuous Pattern Recognition Receptor to Microbes and Beyond. In: Hsieh SL. (eds) Lectin in Host Defense Against Microbial Infections. Advances in Experimental Medicine and Biology, vol 1204. Springer, Singapore. https://doi.org/10.1007/978-981-15-1580-4_3<br>
+               del Fresno C, Iborra S, Saz-Leal P, Martínez-López M and Sancho D (2018) Flexible Signaling of Myeloid C-Type Lectin Receptors in Immunity and Inflammation. Front. Immunol. 9:804. doi: 10.3389/fimmu.2018.00804<br>
+               Huang, Y., Chen, S., Liu, R. et al. CLEC5A is critical for dengue virus-induced osteoclast activation and bone homeostasis. J Mol Med 94, 1025–1037 (2016). https://doi.org/10.1007/s00109-016-1409-0<br>
+               Teng, O., Chen, S. T., Hsu, T. L., Sia, S. F., Cole, S., Valkenburg, S. A., Hsu, T. Y., Zheng, J. T., Tu, W., Bruzzone, R., Peiris, J., Hsieh, S. L., & Yen, H. L. (2016). CLEC5A-Mediated Enhancement of the Inflammatory Response in Myeloid Cells Contributes to Influenza Virus Pathogenicity In Vivo. Journal of virology, 91(1), e01813-16. https://doi.org/10.1128/JVI.01813-16<br>
+               Miller, J. L., de Wet, B. J., Martinez-Pomares, L., Radcliffe, C. M., Dwek, R. A., Rudd, P. M., & Gordon, S. (2008). The mannose receptor mediates dengue virus infection of macrophages. PLoS pathogens, 4(2), e17. https://doi.org/10.1371/journal.ppat.0040017<br>
+               Ishak, H., Takegami, T., Kamimura, K. and Funada, H. (2001), Comparative Sequences of Two Type 1 Dengue Virus Strains Possessing Different Growth Characteristics In Vitro. Microbiology and Immunology, 45: 327-331. doi:10.1111/j.1348-0421.2001.tb02627.x<br>
+               Fuchs, A., Lin, T.-Y., Beasley, D. W., Stover, C. M., Schwaeble, W. J., Pierson, T. C., & Diamond, M. S. (2010). Direct Complement Restriction of Flavivirus Infection Requires Glycan Recognition by Mannose-Binding Lectin. Cell Host & Microbe, 8(2), 186–195. doi:10.1016/j.chom.2010.07.007<br>
+               Lee, E., Weir, R. C., & Dalgarno, L. (1997). Changes in the Dengue Virus Major Envelope Protein on Passaging and Their Localization on the Three-Dimensional Structure of the Protein. Virology, 232(2), 281–290. doi:10.1006/viro.1997.8570<br>
+               Mason, P. W., McAda, P. C., Mason, T. L., & Fournier, M. J. (1987). Sequence of the dengue-1 virus genome in the region encoding the three structural proteins and the major nonstructural protein NS1. Virology, 161(1), 262–267. doi:10.1016/0042-6822(87)90196-6<br>
+               Osatomi, K., & Sumiyoshi, H. (1990). Complete nucleotide sequence of dengue type 3 virus genome RNA. Virology, 176(2), 643–647. doi:10.1016/0042-6822(90)90037-r<br>
+               Crill, W. D., & Roehrig, J. T. (2001). Monoclonal Antibodies That Bind to Domain III of Dengue Virus E Glycoprotein Are the Most Efficient Blockers of Virus Adsorption to Vero Cells. Journal of Virology, 75(16), 7769–7773. doi:10.1128/jvi.75.16.7769-7773.2001<br>
+               Johnson, A. J., Guirakhoo, F., & Roehrig, J. T. (1994). The Envelope Glycoproteins of Dengue 1 and Dengue 2 Viruses Grown in Mosquito Cells Differ in Their Utilization of Potential Glycosylation Sites. Virology, 203(2), 241–249. doi:10.1006/viro.1994.1481<br>
+               PŘISTOUPIL, T. I.; KRAMLOVA, M.; ŠTĚRBÍKOVÁ, J. On the mechanism of adsorption of proteins to nitrocellulose in membrane chromatography. Journal of chromatography A, 1969, 42: 367-375.<br>
+               ROGERO, Celia, et al. Silicon surface nanostructuring for covalent immobilization of biomolecules. The Journal of Physical Chemistry C, 2008, 112.25: 9308-9314.<br>
+               S. Bhattacharya, A. Datta, J. M. Berg and S. Gangopadhyay, "Studies on surface wettability of poly(dimethyl) siloxane (PDMS) and glass under oxygen-plasma treatment and correlation with bond strength," in Journal of Microelectromechanical Systems, vol. 14, no. 3, pp. 590-597, June 2005, doi: 10.1109/JMEMS.2005.844746.<br>
+               CHEANG, Tuck-yun, et al. Promising plasmid DNA vector based on APTES-modified silica nanoparticles. International journal of nanomedicine, 2012, 7: 1061.<br>
+               FISCHER, Marcel JE. Amine coupling through EDC/NHS: a practical approach. In: Surface plasmon resonance. Humana Press, 2010. p. 55-73.
+            </p>
+        </section>
+    </article>
+</div>
+
+<!--gotop-->
+<div id="gotop"><a href="#"></a></div>
+<script>
+$(function(){
+    $('#gotop').click(function(){ 
+        $('html,body').animate({scrollTop:0}, "fast");
+    });
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 300 ){
+            $('#gotop').fadeIn(100);
+        } else {
+            $('#gotop').stop().fadeOut(100);
+        }
+    }).scroll();
+});
+
+$(function(){
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 600 ){
+            $('.section-nav').fadeIn("fast");
+        } else {
+            $('.section-nav').fadeOut("fast");
+        }
+    }).scroll();
+});
+
+</script>
+
+</body>
+</html>
+{{Template:CCU_Taiwan/footer}}

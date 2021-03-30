@@ -1,0 +1,65 @@
+{{Template:CCU_Taiwan/bootstrap_min_css}}
+{{Template:CCU_Taiwan/modify_css}}
+{{Template:CCU_Taiwan/header}}
+{{Template:CCU_Taiwan/awards_css}}
+
+<html>
+<head>
+
+<script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:CCU_Taiwan/JS/bootstrap&action=raw&ctype=text/javascript"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<!--Awards-->
+<body>
+<div id="fullpage" class="infos bg_img_1">
+    <h1 class="wordcenter shadow">Awards</h1>
+</div>
+
+<div class="contents s12 m6 l4" id="text">
+    <article>
+        <section>
+            <br>
+            <div id="imginfo">
+                <h2>Medal</h2>
+                <h2 id="h2_gol">Gold Medal</h2>
+            </div>
+            <div id="imginfo1">
+                <img width="100%" src="https://2020.igem.org/wiki/images/c/ca/T--CCU_Taiwan--Awardsnew1.png">
+            </div>
+            <br>
+        </section>
+        <br><br>
+        <section>
+            <div id="imginfo1">
+                <img width="50%" src="https://2020.igem.org/wiki/images/f/f8/T--CCU_Taiwan--Awardsnew2.png">
+            </div>
+            <div id="imginfo">
+                <h2>Nomination</h2>
+                <h3>Nominated for Inclusivity Awards</h3>
+            </div>
+        </section>
+    </article>
+</div>
+
+<!--gotop-->
+<div id="gotop"><a href="#"></a></div>
+<script>
+$(function(){
+    $('#gotop').click(function(){ 
+        $('html,body').animate({scrollTop:0}, "fast");
+    });
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 300 ){
+            $('#gotop').fadeIn(100);
+        } else {
+            $('#gotop').stop().fadeOut(100);
+        }
+    }).scroll();
+});
+</script>
+
+</body>
+</html>
+{{Template:CCU_Taiwan/footer}}

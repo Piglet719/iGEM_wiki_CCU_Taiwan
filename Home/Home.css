@@ -1,0 +1,127 @@
+<html>
+<style type="text/css">
+
+html, body{
+    height: 100%
+}
+
+.fixed_bg{
+    display: block;
+    width: 100%;
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+
+.wordcenter{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+}
+
+.shadow{
+    box-shadow: 0 0 0 rgba(0,0,0,0)!important;
+}
+
+.color {
+    background-color: rgba(227, 227, 227);
+}
+
+.color_1 {
+    background-color: rgba(227, 227, 227);
+    padding-top: 28px;
+}
+
+#fullpage_3 {
+    height: 75vh;
+}
+
+#fullpage_5 {
+    height: 85vh;
+}
+
+#home_img3 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+}
+
+#home_img3_1 {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    bottom: auto;
+    right: auto;
+    -webkit-transform: translateX(-50%) translateY(-25%);
+    transform: translateX(-50%) translateY(-25%);
+    text-align: center;
+    display: none;
+    max-width: 70%;
+}
+
+#home_img3_2 {
+    position: absolute;
+    left: 50%;
+    top: 85%;
+    bottom: auto;
+    right: auto;
+    -webkit-transform: translateX(-50%) translateY(-85%);
+    transform: translateX(-50%) translateY(-85%);
+    text-align: center;
+    display: none;
+    max-width: 70%;
+}
+
+#home_video5 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+}
+
+@media (max-width: 850px) {
+    #home_img3 {
+        display: none;
+    }
+    #home_img3_1 {
+        display: block;
+    }
+    #home_img3_2 {
+        display: block;
+    }
+    #fullpage_5 {
+        height: 75vh;
+    }
+}
+
+@media (max-width: 650px) {
+    #home_img3_1 {
+        max-width: 85%;
+    }
+    #home_img3_2 {
+        top: 80%;
+        max-width: 85%;
+    }
+    #fullpage_5 {
+        height: 65vh;
+    }
+}
+</style>
+</html>
